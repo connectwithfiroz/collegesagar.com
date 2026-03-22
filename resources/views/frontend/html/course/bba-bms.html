@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collegesagar | BBA & BMS Undergraduate Portal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="../assests/css/all-coursestyle.css">
+    <link rel="icon" type="image/x-icon" href="../assests/image/log.png">
+
+
+    
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="../assests/image/log.png" style="height: 100px;" width="120px;" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="../college.html">College</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section py-5 bg-light">
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-800">Undergraduate <br><span style="color: var(--soft-blue-text);">Management
+                    Programs</span></h1>
+            <p class="lead text-muted mt-3 mx-auto" style="max-width: 750px;">
+                Start your journey into the corporate world with our premier BBA and BMS specializations tailored for
+                the 2026 academic session.
+            </p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-coins fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">BBA Finance</h3>
+                    <p class="text-muted">Master the basics of financial accounting, taxation, and investment banking
+                        for the modern era.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BBA Finance')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-ad fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">Marketing & UX</h3>
+                    <p class="text-muted">Explore consumer behavior, digital advertising, and the fundamentals of user
+                        experience design.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BBA Marketing')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-briefcase fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">BMS (Management)</h3>
+                    <p class="text-muted">A versatile degree focusing on business law, leadership, and operational
+                        management strategies.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BMS General')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-display fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">BBA Digital Business</h3>
+                    <p class="text-muted">Designed for the tech-savvy manager, focusing on E-commerce, Fintech, and AI
+                        in business.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BBA Digital')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-user-group fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">Human Resources</h3>
+                    <p class="text-muted">Learn talent acquisition, employee engagement, and corporate communication
+                        skills.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BBA HR')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="spec-card h-100 p-4 border rounded-4 shadow-sm">
+                    <div class="icon-circle mb-3"><i class="fas fa-earth-asia fa-2x"></i></div>
+                    <h3 class="h4 fw-bold">International Business</h3>
+                    <p class="text-muted">Navigate global markets, international trade laws, and cross-border logistics
+                        management.</p>
+                    <a href="../form.html"
+                        class="btn btn-apply text-white d-flex align-items-center justify-content-center fw-bold text-decoration-none"
+                        onclick="saveCollege('BBA International Business')">
+                        <i class="fas fa-paper-plane me-2 text-white"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cta-banner mt-5 p-5 text-center text-white rounded-5 shadow-lg bg-primary">
+            <h2 class="display-6 fw-bold">CUET / IPMAT Merit Waiver</h2>
+            <p class="opacity-75 lead">Students with top percentiles in Entrance Exams or 90% in Class 12th are eligible
+                for full scholarships.</p>
+            <a href="form.html" class="btn btn-light btn-lg rounded-pill fw-bold mt-3 px-5">Submit My Scores</a>
+        </div>
+    </main>
+   <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../assests/image/log.png" alt="Logo" class="me-2 rounded " style="height: 100px; width:100px;">
+                    </div>
+                    <p class="text-muted pe-lg-5">
+                        Empowering minds, shaping futures. Committed to delivering excellence in world-class education
+                        and fostering global innovation.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold">Quick Links</h5>
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../college.html" class="footer-link">College</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold"  style="margin-top:10px">Academics</h5>
+                    <a href="../student-support.html" class="footer-link">Student Support</a>
+                    <a href="../scholarship.html" class="footer-link">Scholarship Evaluation</a>
+                    <a href="../admission.html" class="footer-link">Admission Process</a>
+                    <a href="../privacyPolicy.html" class="footer-link">Privacy Ploicy</a>
+                    <a href="../term&condition.html" class="footer-link">Term & Conditions</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4 fw-bold">Connect With Us</h5>
+                    <div class="d-flex mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="small text-muted">Stay updated with our latest news and events.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © 2026 Collegesagar. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end bottom-links">
+
+                        <a href="#">Advertising</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    <script>
+        function saveData(stream) {
+            localStorage.setItem('selectedStream', stream);
+        }
+    </script>
+    <script>
+        function saveCollege(name) {
+            localStorage.setItem('selectedCollege', name);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

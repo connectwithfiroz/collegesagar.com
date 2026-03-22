@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTEUP | Board of Technical Education Uttar Pradesh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../assests/image/log.png">
+
+
+    <style>
+        :root {
+            --primary-blue: #002147;
+            /* Deep Navy from AKTU */
+            --accent-gold: #FFD700;
+            /* Gold from AKTU */
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .bg-primary-dark {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .text-accent {
+            color: var(--accent-gold);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-gold);
+            border: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .btn-accent:hover {
+            background-color: #e6c200;
+            transform: scale(1.05);
+        }
+
+        /* Full Responsive Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(151, 228, 234, 0.8), rgba(57, 58, 59, 0.8)),
+                url('../assests/university-img/btu-img.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+        }
+
+        /* Stat Cards with Hover effects */
+        .stat-card {
+            border-bottom: 4px solid var(--accent-gold);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+         .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        } 
+
+        
+
+        /* Course Card Styling */
+        .course-card {
+            border: none;
+            border-radius: 15px;
+            transition: 0.3s;
+            background: #fff;
+        }
+
+        .course-card:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .course-card:hover .text-primary {
+            color: var(--accent-gold) !important;
+        }
+
+        .course-card:hover .text-secondary {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        /* Responsive Table */
+        .table-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .mt-n5 {
+                margin-top: -20px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="../assests/image/log.png" style="height: 100px;" width="120px;" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../college.html">College</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!--  -->
+
+    <header class="hero-section text-center">
+        <div class="container px-4">
+            <h1 class="display-4 fw-bold mb-3">Board of Technical Education Uttar Pradesh</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 800px;">Providing quality technical education and
+                standardized diploma certifications across the state since 1958.</p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <span class="badge bg-light text-dark p-2 px-3 rounded-pill">State Government Board</span>
+                <span class="badge bg-light text-dark p-2 px-3 rounded-pill">Lucknow Head Office</span>
+                <span class="badge bg-light text-dark p-2 px-3 rounded-pill">Est. 1958</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mt-n5 position-relative" style="margin-top: -50px; z-index: 5;">
+        <div class="row g-3 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="card stat-card shadow p-3 p-md-4 text-center border-0">
+                    <h3 class="fw-bold text-primary mb-1">1958</h3>
+                    <p class="text-muted small mb-0">Year Established</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card stat-card shadow p-3 p-md-4 text-center border-0">
+                    <h3 class="fw-bold text-primary mb-1">Diploma</h3>
+                    <p class="text-muted small mb-0">Level Certification</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card stat-card shadow p-3 p-md-4 text-center border-0">
+                    <h3 class="fw-bold text-primary mb-1">State</h3>
+                    <p class="text-muted small mb-0">Regulatory Board</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold border-start border-4 border-primary ps-3 mb-4">Board Overview</h2>
+                    <p class="text-secondary">BTEUP is the apex body for regulating polytechnic education in Uttar
+                        Pradesh. It ensures high standards by prescribing curricula, conducting semester examinations,
+                        and granting affiliations to technical institutions.</p>
+                    <div class="row mt-4">
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-gear-wide-connected text-primary me-3 fs-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Technical Focus</h5>
+                                    <small class="text-muted">Emphasis on Engineering & Technology streams.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-patch-check text-primary me-3 fs-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Certification</h5>
+                                    <small class="text-muted">Standardized Diploma Degrees recognized statewide.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="bg-light p-4 p-md-5 rounded shadow-sm">
+                        <h4 class="fw-bold mb-4">Core Popular Criteria</h4>
+                        <ul class="list-group list-group-flush bg-transparent">
+                            <li class="list-group-item bg-transparent d-flex align-items-center"><i
+                                    class="bi bi-check2-circle text-primary me-2"></i> Mechanical Engineering</li>
+                            <li class="list-group-item bg-transparent d-flex align-items-center"><i
+                                    class="bi bi-check2-circle text-primary me-2"></i> Civil & Electrical</li>
+                            <li class="list-group-item bg-transparent d-flex align-items-center"><i
+                                    class="bi bi-check2-circle text-primary me-2"></i> Computer Science</li>
+                            <li class="list-group-item bg-transparent d-flex align-items-center"><i
+                                    class="bi bi-check2-circle text-primary me-2"></i> Pharmacy (D.Pharm)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Popular Diploma Programs</h2>
+                <p class="text-muted">Industry-aligned courses for technical career growth</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card course-card h-100 p-4 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-building fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Engineering</h4>
+                            <p class="text-secondary small">Comprehensive 3-year programs in Civil, Mechanical, and
+                                Electrical branches.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card h-100 p-4 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-capsule fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Pharmacy</h4>
+                            <p class="text-secondary small">Specialized 2-year Diploma in Pharmacy (D.Pharm) for
+                                healthcare sectors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card h-100 p-4 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-laptop fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Technology</h4>
+                            <p class="text-secondary small">Modern courses in Computer Science and Electronics &
+                                Communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admission" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Admission Process (JEECUP)</h2>
+            <div class="table-container shadow rounded">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-primary-dark text-white text-center">
+                            <tr>
+                                <th class="p-3">Step</th>
+                                <th class="p-3">Requirement</th>
+                                <th class="p-3">Process</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td class="p-3 fw-bold">1</td>
+                                <td class="p-3">10th / 12th Pass</td>
+                                <td class="p-3 text-secondary">Apply for JEECUP Entrance Exam</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">2</td>
+                                <td class="p-3">Valid Scorecard</td>
+                                <td class="p-3 text-secondary">Participate in Online Counselling</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">3</td>
+                                <td class="p-3">College Selection</td>
+                                <td class="p-3 text-secondary">Final Seat Allotment & Document Verification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary-dark text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Top Recruitment Sectors</h2>
+            <p class="mb-5 opacity-75">BTEUP Diploma holders are eligible for various core industries:</p>
+            <div class="row g-3 justify-content-center text-dark">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Manufacturing</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Power Sector</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Construction</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Automobile</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">IT Services</div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../assests/image/log.png" alt="Logo" class="me-2 rounded " style="height: 100px; width:100px;">
+                    </div>
+                    <p class="text-muted pe-lg-5 " style="color:#eee;">
+                        Empowering minds, shaping futures. Committed to delivering excellence in world-class education
+                        and fostering global innovation.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold">Quick Links</h5>
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../about.html" class="footer-link">College</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold"  style="margin-top:10px">Academics</h5>
+                    <a href="../student-support.html" class="footer-link">Student Support</a>
+                    <a href="../scholarship.html" class="footer-link">Scholarship Evaluation</a>
+                    <a href="../admission.html" class="footer-link">Admission Process</a>
+                    <a href="../privacyPolicy.html" class="footer-link">Privacy Ploicy</a>
+                    <a href="../term&condition.html" class="footer-link">Term & Conditions</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4 fw-bold">Connect With Us</h5>
+                    <div class="d-flex mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="small text-muted" style="color:white;">Stay updated with our latest news and events.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © 2026 Collegesagar. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end bottom-links">
+
+                        <a href="#">Advertising</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

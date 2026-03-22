@@ -1,0 +1,113 @@
+        :root {
+            --primary-green: #90EE90; 
+            --para-dark: #0f3d0f;
+            --soft-mint: #f9fff9;
+            --card-white: #ffffff;
+        }
+
+        body {
+            background-color: #fff;
+            font-family: 'Poppins', sans-serif;
+            color: #444;
+        }
+
+        /* Hero Styling */
+        .para-hero {
+            background: linear-gradient(rgba(144, 238, 144, 0.15), rgba(255, 255, 255, 1));
+            padding: 70px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        .hero-badge {
+            background: var(--para-dark);
+            color: var(--primary-green);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Course Box UI */
+        .para-card {
+            background: var(--card-white);
+            border: 1px solid #edf7ed;
+            border-radius: 24px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .para-card:hover {
+            transform: scale(1.03);
+            border-color: var(--primary-green);
+            box-shadow: 0 15px 35px rgba(144, 238, 144, 0.2);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            color: var(--para-dark);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .course-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--para-dark);
+            margin-bottom: 12px;
+        }
+
+        /* Button Layout */
+        .cta-flex {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            padding-top: 15px;
+        }
+
+        .apply-now-btn {
+            background-color: var(--para-dark);
+            color: #fff !important;
+            padding: 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            flex-grow: 1;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .apply-now-btn:hover {
+            background-color: #000;
+        }
+
+        .wa-btn {
+            background-color: #25d366;
+            color: #fff !important;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .wa-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }

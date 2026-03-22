@@ -1,0 +1,505 @@
+ /* student support styling css */
+ :root {
+     --soft-blue: #eef2ff;
+     --main-blue: #3b82f6;
+     --premium-yellow: #cebc75;
+     /* Bright Vibrant Yellow */
+     --dark-text: #0f172a;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background-color: #fcfdfe;
+     color: var(--dark-text);
+     overflow-x: hidden;
+ }
+
+ /* Hero Text Animation */
+ .highlight-text {
+     color: var(--main-blue);
+     position: relative;
+     display: inline-block;
+ }
+
+ /* The "WOW" Form Card */
+ .master-card {
+     background: #ffffff;
+     border: 1px solid #e2e8f0;
+     border-radius: 30px;
+     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+     padding: 40px;
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ /* Hover Effect: Yellow Background & White Text */
+ .hover-yellow-card {
+     transition: all 0.4s ease;
+     cursor: pointer;
+     border: 1px solid #f1f5f9;
+ }
+
+ .hover-yellow-card:hover {
+     background-color: var(--premium-yellow) !important;
+     transform: translateY(-10px);
+     box-shadow: 0 20px 25px -5px rgba(251, 206, 23, 0.4);
+ }
+
+ .hover-yellow-card:hover h5,
+ .hover-yellow-card:hover p,
+ .hover-yellow-card:hover i,
+ .hover-yellow-card:hover small {
+     color: #ffffff !important;
+ }
+
+ /* Floating Input Styling */
+ .form-control-custom {
+     border: 2px solid #f1f5f9;
+     border-radius: 15px;
+     padding: 15px;
+     transition: 0.3s;
+ }
+
+ .form-control-custom:focus {
+     border-color: var(--main-blue);
+     box-shadow: none;
+     background-color: var(--soft-blue);
+ }
+
+ /* Animated Button */
+ .btn-main {
+     background: var(--main-blue);
+     color: white;
+     border-radius: 15px;
+     padding: 18px;
+     font-weight: 700;
+     border: none;
+     letter-spacing: 0.5px;
+     transition: 0.3s;
+ }
+
+ .btn-main:hover {
+     background: var(--premium-yellow);
+     color: #fff;
+     box-shadow: 0 10px 15px rgba(251, 206, 23, 0.3);
+ }
+
+ /* Review Section Micro-UX */
+ .review-pill {
+     background: #fff;
+     border-radius: 20px;
+     padding: 25px;
+     border-bottom: 5px solid var(--main-blue);
+     transition: 0.3s;
+ }
+
+ .review-pill:hover {
+     border-bottom-color: var(--premium-yellow);
+ }
+
+ .scholarship-tag {
+     background: #dcfce7;
+     color: #166534;
+     padding: 5px 15px;
+     border-radius: 50px;
+     font-size: 0.8rem;
+     font-weight: 700;
+ }
+
+ /* ScholarShip Program styling */
+ :root {
+     --bg-soft-blue: #f8fbff;
+     --primary-blue: #3b82f6;
+     --deep-navy: #1e3a8a;
+     --hover-yellow: #cebc75;
+     /* High-end Vibrant Yellow */
+     --text-main: #334155;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background-color: var(--bg-soft-blue);
+     color: var(--text-main);
+     line-height: 1.6;
+ }
+
+ /* Section Header */
+ .section-header {
+     padding: 60px 0;
+     text-align: center;
+ }
+
+ .section-header h1 {
+     font-weight: 800;
+     color: var(--deep-navy);
+     letter-spacing: -1px;
+ }
+
+ /* Interactive Step Cards */
+ .eval-card {
+     background: #ffffff;
+     border: none;
+     border-radius: 24px;
+     padding: 40px;
+     height: 100%;
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+     position: relative;
+     z-index: 1;
+ }
+
+ /* The Magic Hover Effect */
+ .eval-card:hover {
+     background-color: var(--hover-yellow) !important;
+     transform: translateY(-12px);
+     box-shadow: 0 25px 50px -12px rgba(251, 206, 23, 0.4);
+ }
+
+ /* Text color change to White on Hover */
+ .eval-card:hover h4,
+ .eval-card:hover p,
+ .eval-card:hover i,
+ .eval-card:hover .card-step-no {
+     color: #ffffff !important;
+ }
+
+ .card-step-no {
+     font-size: 4rem;
+     font-weight: 900;
+     color: rgba(59, 130, 246, 0.05);
+     position: absolute;
+     top: 10px;
+     right: 25px;
+     transition: 0.3s;
+ }
+
+ /* Main Test Action Box */
+ .cta-banner {
+     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+     border-radius: 30px;
+     padding: 50px;
+     color: white;
+     margin: 60px 0;
+     box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+ }
+
+ .btn-test-start {
+     background: var(--hover-yellow);
+     color: var(--deep-navy);
+     font-weight: 700;
+     padding: 18px 45px;
+     border-radius: 50px;
+     border: none;
+     transition: 0.3s ease;
+     text-transform: uppercase;
+ }
+
+ .btn-test-start:hover {
+     background: white;
+     color: var(--primary-blue);
+     transform: scale(1.05);
+ }
+
+ /* Eligibility List Styling */
+ .info-pane {
+     background: white;
+     border-radius: 20px;
+     padding: 30px;
+     border-left: 6px solid var(--primary-blue);
+     transition: 0.3s;
+ }
+
+ .info-pane:hover {
+     border-left-color: var(--hover-yellow);
+     background: #fff;
+ }
+
+ .check-icon {
+     color: var(--primary-blue);
+     margin-right: 10px;
+ }
+
+ /* Admisison Process styling */
+ :root {
+     --primary: #2563eb;
+     --hover-yellow: #fbce17;
+     --soft-blue: #f0f7ff;
+ }
+
+ body {
+     font-family: 'Plus Jakarta Sans', sans-serif;
+     background-color: #ffffff;
+ }
+
+ /* Minimal Header */
+ .hero-banner {
+     background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+     color: white;
+     padding: 40px 0;
+     border-radius: 0 0 30px 30px;
+ }
+
+ /* 1-5 Step Cards - Soft Shadow */
+ .step-card {
+     background: #ffffff;
+     border: 1px solid #edf2f7;
+     border-radius: 18px;
+     padding: 20px;
+     transition: 0.3s ease;
+     height: 100%;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+     /* Extremely minimal shadow */
+ }
+
+ .step-card:hover {
+     background-color: var(--hover-yellow) !important;
+     border-color: var(--hover-yellow);
+     transform: translateY(-5px);
+ }
+
+ .step-card:hover *,
+ .step-card:hover .text-muted {
+     color: #ffffff !important;
+ }
+
+ .step-badge {
+     font-size: 0.65rem;
+     font-weight: 800;
+     color: var(--primary);
+     background: var(--soft-blue);
+     padding: 3px 10px;
+     border-radius: 50px;
+     margin-bottom: 12px;
+     display: inline-block;
+ }
+
+ /* Legal Box - Minimal Design */
+ .legal-premium-box {
+     background: #ffffff;
+     border-radius: 24px;
+     padding: 40px;
+     margin: 50px 0;
+     /* Margin adjusted to not hit footer */
+     border: 1px solid #e2e8f0;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+     /* Subtle shadow */
+ }
+
+ .legal-icon-wrap {
+     width: 60px;
+     height: 60px;
+     background: var(--primary);
+     color: white;
+     border-radius: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.8rem;
+     margin-bottom: 20px;
+ }
+
+ .resp-pill {
+     background: #f8fafc;
+     border-left: 3px solid var(--hover-yellow);
+     padding: 12px 15px;
+     border-radius: 10px;
+     margin-bottom: 8px;
+     font-size: 0.9rem;
+ }
+
+ .price-circle {
+     background: #10b981;
+     color: white;
+     padding: 15px 25px;
+     border-radius: 15px;
+ }
+
+ /* Navbar & Footer tweaks for spacing */
+ .navbar {
+     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+ }
+
+ footer {
+     margin-top: 0;
+     padding-top: 50px;
+ }
+
+ /* Privacy Policy Page  section styling */
+ :root {
+     --primary: #2563eb;
+     --accent: #fbce17;
+     --bg-light: #f8fbff;
+     --text-dark: #1e293b;
+ }
+
+ body {
+     font-family: 'Plus Jakarta Sans', sans-serif;
+     background-color: var(--bg-light);
+     color: var(--text-dark);
+     scroll-behavior: smooth;
+ }
+
+ /* Hero Header */
+ .policy-header {
+     background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+     color: white;
+     padding: 60px 0;
+     border-radius: 0 0 40px 40px;
+ }
+
+ /* Content Card */
+ .policy-card {
+     background: #ffffff;
+     border-radius: 25px;
+     padding: 40px;
+     border: 1px solid #e2e8f0;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+ }
+
+ /* Sidebar Navigation */
+ .sticky-sidebar {
+     position: sticky;
+     top: 100px;
+ }
+
+ .nav-link-custom {
+     display: block;
+     padding: 10px 15px;
+     color: #64748b;
+     text-decoration: none;
+     border-left: 3px solid transparent;
+     font-weight: 500;
+     transition: 0.3s;
+     font-size: 0.9rem;
+ }
+
+ .nav-link-custom:hover,
+ .nav-link-custom.active {
+     color: var(--primary);
+     border-left-color: var(--accent);
+     background: #f1f5f9;
+ }
+
+ /* Section Styling */
+ .policy-section {
+     margin-bottom: 40px;
+ }
+
+ .policy-section h3 {
+     font-weight: 800;
+     font-size: 1.5rem;
+     margin-bottom: 20px;
+     color: var(--primary);
+ }
+
+ .policy-section p,
+ .policy-section li {
+     line-height: 1.8;
+     color: #475569;
+ }
+
+ .icon-box {
+     width: 40px;
+     height: 40px;
+     background: var(--soft-blue);
+     color: var(--primary);
+     border-radius: 10px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     margin-right: 15px;
+ }
+
+ /* Mobile Responsive */
+ @media (max-width: 768px) {
+     .policy-card {
+         padding: 25px;
+     }
+
+     .sticky-sidebar {
+         position: relative;
+         top: 0;
+         margin-bottom: 30px;
+     }
+ }
+
+ /* term & Conditions styling */
+ :root {
+     --primary: #2563eb;
+     --accent: #fbce17;
+     --light-bg: #f8fbff;
+ }
+
+ body {
+     font-family: 'Plus Jakarta Sans', sans-serif;
+     background-color: var(--light-bg);
+     color: #334155;
+ }
+
+ /* Hero Header */
+ .terms-header {
+     background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+     color: white;
+     padding: 80px 0 60px;
+     border-radius: 0 0 50px 50px;
+ }
+
+ /* Modern Accordion */
+ .accordion-item {
+     border: 1px solid #e2e8f0 !important;
+     border-radius: 15px !important;
+     margin-bottom: 15px;
+     overflow: hidden;
+     background: white;
+ }
+
+ .accordion-button {
+     font-weight: 700;
+     color: var(--primary) !important;
+     padding: 20px;
+     box-shadow: none !important;
+ }
+
+ .accordion-button:not(.collapsed) {
+     background-color: #f0f7ff;
+     color: var(--primary);
+ }
+
+ .accordion-body {
+     line-height: 1.8;
+     color: #475569;
+     font-size: 0.95rem;
+     padding: 25px;
+ }
+
+ .imp-note {
+     background: #fff9db;
+     border-left: 5px solid var(--accent);
+     padding: 15px;
+     border-radius: 8px;
+     font-weight: 600;
+     margin-top: 15px;
+ }
+
+ /* Floating Contact Card */
+ .contact-sidebar {
+     background: white;
+     border-radius: 20px;
+     padding: 25px;
+     border: 1px solid #e2e8f0;
+     position: sticky;
+     top: 100px;
+ }
+
+ .btn-accept {
+     background: var(--primary);
+     color: white;
+     border-radius: 50px;
+     padding: 12px 30px;
+     font-weight: 700;
+     transition: 0.3s;
+ }
+
+ .btn-accept:hover {
+     background: var(--accent);
+     color: #000;
+ }

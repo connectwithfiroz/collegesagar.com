@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. M. C. Saxena Group of Institutions</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assests/image/log.png">
+
+
+    <style>
+        :root {
+            --dgi-navy: #0d1b2a;
+            --dgi-gold: #e09f3e;
+            --dgi-accent: #335c67;
+            --dgi-soft: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            color: var(--dgi-navy) !important;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* --- HERO SECTION (Increased Height as requested) --- */
+        /* Sirf is part ko replace ya update kar lo */
+        .hero-dgi {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.92) 0%, rgba(13, 27, 42, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2000') center/cover;
+            min-height: 85vh;
+            /* Yeh ab VGI ke barabar hai */
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            padding-top: 60px;
+        }
+
+        /* Floating boxes ko thoda upar adjust karne ke liye */
+        .stat-box-vgi {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- DEPARTMENTS --- */
+        .dept-card {
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            height: 100%;
+            background: white;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--dgi-gold);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .dept-icon {
+            font-size: 3rem;
+            color: var(--dgi-gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 350px;
+        }
+
+        .gallery-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--dgi-navy), transparent);
+            opacity: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            transition: 0.4s;
+        }
+
+        .gallery-wrap:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-wrap:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- CALL TO ACTION BOX --- */
+        .cta-vcorp {
+            background: var(--dgi-navy);
+            border-radius: 30px;
+            padding: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-left: 10px solid var(--dgi-gold);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="../assests/image/log.png" style="height: 100px;"
+                    width="120px;" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../college.html">College</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!--  -->
+
+    <section class="hero-dgi">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="grade-badge mb-4">ESTABLISHED SINCE 2004 | LUCKNOW</div>
+                    <h1 class="display-3 fw-800 mb-4">Dr. M. C. Saxena Group of Institutions <br>Shaping Future Leaders
+                    </h1>
+                    <p class="fs-5 mb-5 opacity-75">Approved by AICTE and PCI (for pharmacy),NCTE . A premier 20-acre
+                        green
+                        campus dedicated to excellence in Management, Pharmacy & Engineering. </p>
+
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-warning btn-lg px-4 py-3 fw-bold">Apply for 2026-27</button>
+                        <button class="btn btn-outline-light btn-lg px-4 py-3">Explore Courses</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="row g-3">
+                        <div class="col-6 mt-5">
+                            <div class="stat-box-vgi text-center">
+                                <h2 class="fw-bold text-warning">22+</h2>
+                                <small>Years Legacy</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box-vgi text-center">
+                                <h2 class="fw-bold text-warning">30</h2>
+                                <small>Acres Campus</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box-vgi text-center">
+                                <h2 class="fw-bold text-warning">100+</h2>
+                                <small>Recruiters</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-n4">
+                            <div class="stat-box-vgi text-center border-warning">
+                                <h2 class="fw-bold text-warning">A</h2>
+                                <small>Performance</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-warning fw-bold text-uppercase">Education for Future</h6>
+                <h2 class="display-5 fw-800 color-navy">Our Specialized Programs</h2>
+                <hr class="mx-auto bg-warning" style="width: 60px; height: 4px; opacity: 1;">
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="dept-card">
+                        <i class="bi bi-briefcase-fill dept-icon"></i>
+                        <h4 class="fw-800">Management</h4>
+                        <p class="text-muted">MBA, BBA, and B.Com programs designed for the corporate leaders of
+                            tomorrow.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dept-card">
+                        <i class="bi bi-capsule-pill dept-icon"></i>
+                        <h4 class="fw-800">Pharmacy</h4>
+                        <p class="text-muted">PCI approved B.Pharm and D.Pharm courses with state-of-the-art laboratory
+                            access.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dept-card">
+                        <i class="bi bi-mortarboard-fill dept-icon"></i>
+                        <h4 class="fw-800">Higher Studies</h4>
+                        <p class="text-muted">Research-oriented curriculum with focus on personality development and
+                            skills.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 hover-lift">
+                        <i class="bi bi-cpu dept-icon"></i>
+                        <h4 class="fw-bold">Engineering</h4>
+                        <ul class="list-unstyled text-muted">
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>B.Tech Computer Science</li>
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>AI & Machine Learning</li>
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>M.Tech Programs</li>
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>Civil Engineering</li>
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>Electronics & Communication</li>
+                            <li><i class="bi bi-chevron-right me-2 text-warning"></i>Mechanical Engineering</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="py-5 bg-light">
+        <div class="text-center mb-5">
+            <h6 class="text-warning fw-bold text-uppercase">Explore M. C. Saxena College</h6>
+            <h2 class="display-5 fw-800 color-navy">Life at Campus</h2>
+            <hr class="mx-auto bg-warning" style="width: 60px; height: 4px; opacity: 1;">
+        </div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="gallery-wrap shadow-lg">
+                        <img src="../assests/image/mc-saxena/mc-campus.png" alt="DGI Campus">
+                        <div class="gallery-overlay">
+                            <div class="text-white">
+                                <h4 class="fw-800">Modern Infrastructure</h4>
+                                <p class="mb-0">A 30-acre hub of technology and learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-wrap shadow-lg">
+                        <img src="../assests/image/mc-saxena/mc-saaxena-student.jpeg" alt="DGI Lab">
+                        <div class="gallery-overlay">
+                            <div class="text-white">
+                                <h4 class="fw-800">College Life</h4>
+                                <p class="mb-0">confidence, friendships, and memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-wrap shadow-lg">
+                        <img src="../assests/image/mc-saxena/mc-saxena-hostle.jpeg" alt="DGI Lab">
+                        <div class="gallery-overlay">
+                            <div class="text-white">
+                                <h4 class="fw-800"> View of Boys Hostel</h4>
+                                <p class="mb-0"> Our campus offers a peaceful and refreshing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-wrap shadow-lg">
+                        <img src="../assests/image/mc-saxena/mc-saxena-lastday.jpg" alt="DGI Lab">
+                        <div class="gallery-overlay">
+                            <div class="text-white">
+                                <h4 class="fw-800">Our Students</h4>
+                                <p class="mb-0">Our institution, In Last Day Memorise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-wrap shadow-lg">
+                        <img src="../assests/image/mc-saxena/mc-saxena-library.jpg" alt="DGI Lab">
+                        <div class="gallery-overlay">
+                            <div class="text-white">
+                                <h4 class="fw-800">Our Students In Library</h4>
+                                <p class="mb-0">Our institution, growing into confident and capable future leaders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="cta-vcorp shadow-lg">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-800 mb-3">Corporate Resource Centre</h2>
+                        <p class="lead opacity-75">Dr. M. C. Saxena Group of Institutions maintains a strong tie-up with
+                            over 100+ recruiters. Our
+                            students are placed in top MNCs like HCL, Wipro, and Amul with packages up to 12 LPA.</p>
+                        <div class="d-flex gap-4 mt-4">
+                            <div>
+                                <h3 class="text-warning fw-800 mb-0">12 LPA</h3>
+                                <small>Highest Package</small>
+                            </div>
+                            <div class="border-start ps-4">
+                                <h3 class="text-warning fw-800 mb-0">100+</h3>
+                                <small>Drives Annually</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center d-none d-lg-block">
+                        <i class="bi bi-rocket-takeoff display-1 text-warning opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../assests/image/log.png" alt="Logo" class="me-2 rounded "
+                            style="height: 100px; width:100px;">
+                    </div>
+                    <p class="text-muted pe-lg-5 " style="color:#eee;">
+                        Empowering minds, shaping futures. Committed to delivering excellence in world-class education
+                        and fostering global innovation.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold">Quick Links</h5>
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../college.html" class="footer-link">College</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold"  style="margin-top:10px">Academics</h5>
+                    <a href="../student-support.html" class="footer-link">Student Support</a>
+                    <a href="../scholarship.html" class="footer-link">Scholarship Evaluation</a>
+                    <a href="../admission.html" class="footer-link">Admission Process</a>
+                    <a href="../privacyPolicy.html" class="footer-link">Privacy Ploicy</a>
+                    <a href="../term&condition.html" class="footer-link">Term & Conditions</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4 fw-bold">Connect With Us</h5>
+                    <div class="d-flex mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="small text-muted" style="color:white;">Stay updated with our latest news and events.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © 2026 Collegesagar. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end bottom-links">
+
+                        <a href="#">Advertising</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

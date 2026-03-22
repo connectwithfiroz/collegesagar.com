@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaudhary Charan Singh University (CCSU)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../assests/image/log.png">
+
+
+    <style>
+        :root {
+            --primary-blue: #002147;
+            --accent-gold: #FFD700;
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        .bg-primary-dark {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .text-accent {
+            color: var(--accent-gold);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-gold);
+            border: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .btn-accent:hover {
+            background-color: #e6c200;
+        }
+
+        /* Banner with Background Image */
+        .hero-section {
+            background: linear-gradient(rgba(151, 228, 234, 0.8), rgba(57, 58, 59, 0.8)), url('../assests/university-img/ccsu-img.jpg') center/cover;
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+        }
+
+        .stat-card {
+            border-bottom: 4px solid var(--accent-gold);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="../assests/image/log.png" style="height: 100px;" width="120px;" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../college.html">College</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!--  -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Chaudhary Charan Singh University</h1>
+            <p class="lead mb-4">Empowering Western Uttar Pradesh through Quality Higher Education</p>
+            <div class="d-flex justify-content-center gap-3">
+                <span class="badge bg-light text-dark p-2 px-3">UGC Recognized</span>
+                <span class="badge bg-light text-dark p-2 px-3">NAAC Accredited</span>
+                <span class="badge bg-light text-dark p-2 px-3">Established 1965</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mt-n5 position-relative" style="margin-top: -50px;">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3">
+                <div class="card stat-card shadow p-4 text-center border-0">
+                    <h3 class="fw-bold text-primary">222 Acres</h3>
+                    <p class="text-muted mb-0">Expansive Campus</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card shadow p-4 text-center border-0">
+                    <h3 class="fw-bold text-primary">AIU</h3>
+                    <p class="text-muted mb-0">Member University</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card shadow p-4 text-center border-0">
+                    <h3 class="fw-bold text-primary">Meerut</h3>
+                    <p class="text-muted mb-0">Uttar Pradesh, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold border-start border-4 border-primary ps-3 mb-4">University Overview</h2>
+                    <p class="text-secondary">Chaudhary Charan Singh University caters to the higher education needs of
+                        western Uttar Pradesh, focusing on quality research and skill development across multiple
+                        disciplines.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-mortarboard text-primary me-3 fs-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Legacy</h5>
+                                    <small class="text-muted">Formerly Meerut University, one of the oldest in the
+                                        region.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-graph-up-arrow text-primary me-3 fs-3"></i>
+                                <div>
+                                    <h5 class="fw-bold">Placement</h5>
+                                    <small class="text-muted">Active Training and Placement Cell for student
+                                        success.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 bg-light p-5 rounded shadow-sm">
+                    <h4 class="fw-bold mb-3">Core Academic Streams</h4>
+                    <ul class="list-group list-group-flush bg-transparent">
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle me-2"></i> Agriculture
+                            & Sciences</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle me-2"></i> Arts &
+                            Social Sciences</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle me-2"></i> Commerce &
+                            Management</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle me-2"></i> Engineering
+                            & Law</li>
+                    </ul>
+                    <button class="btn btn-primary w-100 mt-3">View All Faculties</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Popular Programs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-book fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Undergraduate</h4>
+                            <ul class="list-unstyled text-secondary mt-3">
+                                <li>BA / BSc / BCom</li>
+                                <li>BBA / BCA</li>
+                                <li>B.Ed / LLB</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-award fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Postgraduate</h4>
+                            <ul class="list-unstyled text-secondary mt-3">
+                                <li>MA / MSc / MCom</li>
+                                <li>MBA / MCA</li>
+                                <li>LLM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-search fs-1 text-primary mb-3"></i>
+                            <h4 class="fw-bold">Doctoral</h4>
+                            <p class="text-secondary mt-3">Advanced M.Phil and Ph.D. research programs in multiple
+                                disciplines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admissions" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Learning Modes</h2>
+            <div class="table-responsive shadow rounded">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-primary-dark text-white">
+                        <tr>
+                            <th class="p-3">Course Type</th>
+                            <th class="p-3">Description</th>
+                            <th class="p-3">Portal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-3 fw-bold">Regular Mode</td>
+                            <td class="p-3">Full-time on-campus education</td>
+                            <td class="p-3"><span class="badge bg-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 fw-bold">Self-Finance</td>
+                            <td class="p-3">Professional and vocational streams</td>
+                            <td class="p-3"><span class="badge bg-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 fw-bold">Distance Learning</td>
+                            <td class="p-3">UGC-recognized correspondence programs</td>
+                            <td class="p-3"><span class="badge bg-primary">View Details</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="py-5 bg-primary-dark text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Campus Facilities</h2>
+            <p class="mb-5 opacity-75">Modern infrastructure providing a rich academic environment.</p>
+            <div class="row g-4 text-dark">
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Library</div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Hostels</div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Stadium</div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Medical</div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Computer Labs</div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="p-3 bg-white rounded shadow-sm fw-bold">Gardens</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="../assests/image/log.png" alt="Logo" class="me-2 rounded " style="height: 100px; width:100px;">
+                    </div>
+                    <p class="text-muted pe-lg-5 " style="color:#eee;">
+                        Empowering minds, shaping futures. Committed to delivering excellence in world-class education
+                        and fostering global innovation.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold">Quick Links</h5>
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../college.html" class="footer-link">College</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold"  style="margin-top:10px">Academics</h5>
+                    <a href="../student-support.html" class="footer-link">Student Support</a>
+                    <a href="../scholarship.html" class="footer-link">Scholarship Evaluation</a>
+                    <a href="../admission.html" class="footer-link">Admission Process</a>
+                    <a href="../privacyPolicy.html" class="footer-link">Privacy Ploicy</a>
+                    <a href="../term&condition.html" class="footer-link">Term & Conditions</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4 fw-bold">Connect With Us</h5>
+                    <div class="d-flex mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="small text-muted" style="color:white;">Stay updated with our latest news and events.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © 2026 Collegesagar. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end bottom-links">
+
+                        <a href="#">Advertising</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

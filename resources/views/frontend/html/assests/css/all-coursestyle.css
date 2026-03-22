@@ -1,0 +1,174 @@
+/* --- 1. Global Variables & Resets --- */
+:root {
+    --light-blue-bg: #f0f7ff;
+    --primary-blue: #1e3a8a;      /* Navy Blue */
+    --accent-yellow: #ffd700;     /* Sun Yellow */
+    --soft-blue-text: #3b82f6;    /* Modern Sky Blue */
+    --text-muted: #64748b;
+    --register-green: #ffffff;    /* Fresh Green */
+    --white: #ffffff;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--light-blue-bg);
+    color: var(--primary-blue);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none !important;
+    transition: var(--transition-smooth);
+}
+
+/* --- 2. Hero Section --- */
+.hero-section {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #1e4661 0%, #fff1f0 100%);
+    text-align: center;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.05);
+}
+
+/* --- 3. The Interactive Cards (The "Attractive" Part) --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 5%;
+}
+
+.spec-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    border: 1px solid rgba(30, 58, 138, 0.08);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+/* Hover State: Lift, Shadow, and Border Glow */
+.spec-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--soft-blue-text);
+    box-shadow: 0 22px 40px rgba(30, 58, 138, 0.12);
+}
+
+/* The Animated Accent Line at the Bottom */
+.spec-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: var(--accent-yellow);
+    transition: width 0.4s ease;
+}
+
+.spec-card:hover::after {
+    width: 100%;
+}
+
+.spec-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.spec-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- 4. Buttons & CTAs --- */
+.btn-scholarship {
+    background: var(--accent-yellow);
+    color: var(--primary-blue);
+    padding: 18px 45px;
+    border-radius: 16px;
+    font-weight: 800;
+    display: inline-block;
+    margin-top: 25px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.btn-scholarship:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
+}
+
+/* Modern Link Hover for "Apply Now" */
+.btn-apply {
+    color: var(--register-green);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.btn-apply::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.spec-card:hover .btn-apply::after {
+    transform: translateX(8px);
+}
+
+/* --- 5. CTA Banner --- */
+.cta-banner {
+    background: var(--primary-blue);
+    border-radius: 40px;
+    padding: 80px 40px;
+    color: var(--white);
+    text-align: center;
+    margin: 60px 5%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle background pattern for the banner */
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* Mobile: 1 column */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: Exactly 3 columns */
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

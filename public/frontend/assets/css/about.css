@@ -1,0 +1,92 @@
+ :root {
+     --brand-green: #198754;
+     --brand-dark: #212529;
+     --jakarta: 'Plus Jakarta Sans', sans-serif;
+ }
+
+ body {
+     font-family: var(--jakarta);
+     overflow-x: hidden;
+ }
+
+ /* UI Enhancements */
+ .text-green-600 {
+     color: var(--brand-green);
+ }
+
+ .bg-dark-custom {
+     background-color: #1a1d20;
+ }
+
+ .brand-accent {
+     color: var(--brand-green);
+     font-weight: 800;
+ }
+
+ .btn-main {
+     background: var(--brand-green);
+     color: white;
+     border-radius: 50px;
+     padding: 10px 25px;
+     font-weight: 600;
+ }
+
+ /* Bold Text Classes */
+ .fw-800 {
+     font-weight: 800;
+ }
+
+ .text-bold-custom {
+     font-weight: 700 !important;
+ }
+
+ /* Counter Styling */
+ .counter-card {
+     transition: all 0.3s ease;
+     border-bottom: 4px solid var(--brand-green) !important;
+ }
+
+ .counter-number {
+     font-size: 2.5rem;
+     font-weight: 800;
+     color: var(--brand-dark);
+     display: block;
+ }
+
+ /* Mission Vision Glow */
+ .mv-card {
+     border: 1px solid rgba(0, 0, 0, 0.05);
+     transition: all 0.3s ease;
+ }
+
+ .mv-card:hover {
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+     border-color: var(--brand-green);
+     transform: translateY(-5px);
+ }
+
+ .founder-img {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 5px solid #f8f9fa;
+ }
+
+ .cta-box {
+     background: var(--brand-dark);
+     color: white;
+     padding: 80px 40px;
+     border-radius: 40px;
+     margin-top: -50px;
+     position: relative;
+     z-index: 2;
+ }
+
+ .btn-cta {
+     background: var(--brand-green);
+     color: white;
+     padding: 15px 40px;
+     border-radius: 50px;
+     font-weight: 700;
+ }
