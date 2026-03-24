@@ -2,52 +2,56 @@
 @section('css')
 @endsection
 @section('content')
-<!--app-content open-->
-<div class="app-content">
-    <section class="section">
-        <!--page-header open-->
-        <div class="page-header">
-            <ol class="breadcrumb">
-                <!-- breadcrumb -->
-                <li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard </li>
-            </ol>
-            <!-- End breadcrumb -->
-            @include('admin.layout.notifications')
-        </div>
-        <!--page-header closed-->
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                    <h4>Student Enquiries</h4>
+    <!--app-content open-->
+    <div class="app-content">
+        <section class="section">
+            <!--page-header open-->
+            <div class="page-header">
+                <ol class="breadcrumb">
+                    <!-- breadcrumb -->
+                    <li class="breadcrumb-item"><a href="#"><i class="fe fe-home mr-2"></i>Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard </li>
+                </ol>
+                <!-- End breadcrumb -->
+                @include('admin.layout.notifications')
+            </div>
+            <!--page-header closed-->
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4>Student Enquiries</h4>
 
-                    <a href="{{ route('admin.student.enquiries.export') }}" class="btn btn-success px-2" style="width:auto;">
-                        Export Excel
-                    </a>
+                        <a href="{{ route('admin.student.enquiries.export') }}" class="btn btn-success px-2"
+                            style="width:auto;">
+                            Export Excel
+                        </a>
 
-                </div>
+                    </div>
 
-                <div class="card-body overflow-auto">
-                    <table class="table table-bordered" id="enquiryTable">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Course</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>IP</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div class="card-body overflow-auto">
+                        <table class="table table-bordered" id="enquiryTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>College</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Course</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                    <th>Source Page</th>
+                                    <th>IP Address</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-</div>
-<!--app-content closed-->
+        </section>
+    </div>
+    <!--app-content closed-->
 @endsection
 @section('custom-script')
     <script>
@@ -62,10 +66,13 @@
 
                 columns: [
                     { data: 'id' },
-                    { data: 'target_college' },
+                    { data: 'college' },
                     { data: 'name' },
                     { data: 'email' },
+                    { data: 'course' },
                     { data: 'phone' },
+                    { data: 'message' },
+                    { data: 'source_page' },
                     { data: 'ip_address' },
                     { data: 'created' }
                 ]

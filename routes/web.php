@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\ScholarshipApplicationController;
 
 require __DIR__."/dev.php";
 /*
@@ -19,5 +20,9 @@ require __DIR__."/dev.php";
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::post('/contact/send', [HomeController::class, 'sendMail'])->name('contact.send');
+Route::post('/submit-scholarship', [HomeController::class, 'submitScholarship'])->name('submit_scholarship');
+
+
+// Route::post('/submit-scholarship', [ScholarshipApplicationController::class, 'store']);
 
 

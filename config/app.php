@@ -20,6 +20,7 @@ return [
     'razorpay_key' => env('RAZORPAY_KEY_ID', NULL),
     'razorpay_secret' => env('RAZORPAY_KEY_SECRET', NULL),
     'MAIL_FROM_ADDRESS' => env('MAIL_FROM_ADDRESS', NULL),
+    'ADMIN_EMAIL' => env('ADMIN_EMAIL', NULL),
     'MAIL_TO_ADDRESS' => env('MAIL_TO_ADDRESS', NULL),
     'CC_MAIL_ADDRESS' => env('CC_MAIL_ADDRESS', NULL),
 

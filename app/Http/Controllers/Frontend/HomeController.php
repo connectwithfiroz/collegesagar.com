@@ -15,6 +15,61 @@ use App\Models\StudentEnquiry;
 class HomeController extends Controller
 {
 
+    public function submitScholarship(Request $request)
+    {
+        $validated = $request->validate([
+            'college' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'course' => 'required|string|max:255',
+            'phone' => 'required|digits_between:10,15',
+            'message' => 'nullable|string|max:1000',
+            'source_page' => 'nullable|string|max:500'
+        ]);
+
+        $ip = $request->ip();
+        $validated['ip_address'] = $ip;
+ 
+        // Limit enquiries per IP
+        $count = StudentEnquiry::where('ip_address', $ip)->count();
+
+        if ($count >= 3) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Maximum enquiry limit reached from this device.'
+            ], 429);
+        }
+
+        // Save enquiry
+        $enquiry = StudentEnquiry::create($validated);
+
+        $admin_email = config('app.ADMIN_EMAIL');
+
+        if ($admin_email) {
+
+            // Mail::raw(
+            //     "New Student Enquiry Received\n\n" .
+            //     "Name: {$enquiry->name}\n" .
+            //     "Email: {$enquiry->email}\n" .
+            //     "Phone: {$enquiry->phone}\n" .
+            //     "Course: {$enquiry->course}\n" .
+            //     "College: {$enquiry->college}\n" .
+            //     "Message: {$enquiry->message}\n" .
+            //     "Source Page: {$enquiry->source_page}\n" .
+            //     "IP Address: {$enquiry->ip_address}",
+            //     function ($message) use ($admin_email) {
+            //         $message->to($admin_email)
+            //             ->subject('New Student Enquiry');
+            //     }
+            // );
+
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => "Thank you {$enquiry->name}. Our team will contact you shortly."
+        ]);
+    }
     public function studentEnquiry(Request $request)
     {
         $request->validate([

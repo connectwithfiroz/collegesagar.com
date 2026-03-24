@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StudentEnquiry extends Model
+class ScholarshipApplication extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -15,7 +15,6 @@ class StudentEnquiry extends Model
         'course',
         'phone',
         'message',
-        'source_page',
-        'ip_address'
+        'source_page'
     ];
 }
