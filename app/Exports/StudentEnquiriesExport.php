@@ -29,10 +29,13 @@ class StudentEnquiriesExport implements FromCollection, WithHeadings, WithMappin
     public function map($row): array
     {
         return [
-            $row->target_college ?? 'General Enquiry',
+            $row->college ?? 'General Enquiry',
             $row->name,
             $row->email,
+            $row->course,
             $row->phone,
+            $row->message,
+            $row->source_page,
             $row->ip_address,
             $row->created_at->format('d M Y h:i A'),
         ];
