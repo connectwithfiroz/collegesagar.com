@@ -24,8 +24,14 @@ class CollegeController extends Controller
     }
     public function storeCourses(Request $request, College $college)
     {
+        $courses = collect($request->courses)
+            ->filter(fn($item) => !empty($item['course_id']))
+            ->values()
+            ->toArray();
+
+        $request->merge(['courses' => $courses]);
         $request->validate([
-            'courses.*.course_id' => 'required',
+            'courses.*.course_id' => 'required|exists:courses,id',
         ]);
 
         // delete old (simple approach)
