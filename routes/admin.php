@@ -1,15 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminBannerController;
-use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminHomeController;
-use App\Http\Controllers\Admin\AdminTestimonialController;
-use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\CollegeController;
 use App\Http\Controllers\Admin\AdminprofileController;
-use App\Http\Controllers\Admin\DonationController;
-use App\Http\Controllers\Admin\NewsController;
-use App\Http\Controllers\Admin\ProductController;
 
 
 Route::get('/login', [AdminHomeController::class, 'index'])->name('admin-login');
@@ -33,5 +27,16 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin-profile', [AdminprofileController::class, 'adminprofile'])->name('admin-profile');
     Route::post('/profile-update', [AdminprofileController::class, 'profileupdate'])->name('admin-profile-update');
     Route::post('/change-password', [AdminprofileController::class, 'changepassword'])->name('admin-change-password');
+
+    Route::name('admin.')->group(function () {
+        Route::resource('colleges', CollegeController::class);
+        Route::get('/college-data', [CollegeController::class, 'collegeData'])->name('colleges.data');
+
+        Route::get('admin/colleges/{college}/courses', [CollegeController::class, 'courses'])
+            ->name('colleges.courses');
+
+        Route::post('admin/colleges/{college}/courses', [CollegeController::class, 'storeCourses'])
+            ->name('colleges.courses.store');
+    });
 
 });
