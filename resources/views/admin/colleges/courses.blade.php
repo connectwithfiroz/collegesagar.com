@@ -40,7 +40,48 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody></tbody>
+                                <tbody>
+                                    @foreach($collegeCourses as $cc)
+                                        <tr>
+                                            <td>
+                                                <select name="courses[{{ $loop->index }}][course_id]"
+                                                    class="form-control course-select">
+                                                    @foreach($courses as $course)
+                                                        <option value="{{ $course->id }}" {{ $cc->course_id == $course->id ? 'selected' : '' }}>
+                                                            {{ $course->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <select name="courses[{{ $loop->index }}][specialization_id]"
+                                                    class="form-control spec-select">
+                                                    <option value="">Select</option>
+                                                    @foreach($cc->course->specializations as $spec)
+                                                        <option value="{{ $spec->id }}" {{ $cc->specialization_id == $spec->id ? 'selected' : '' }}>
+                                                            {{ $spec->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="number" name="courses[{{ $loop->index }}][fees]"
+                                                    value="{{ $cc->fees }}" class="form-control">
+                                            </td>
+
+                                            <td>
+                                                <input type="number" name="courses[{{ $loop->index }}][duration]"
+                                                    value="{{ $cc->duration }}" class="form-control">
+                                            </td>
+
+                                            <td>
+                                                <button type="button" class="btn btn-danger removeRow">X</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
 
                             <button type="button" class="btn btn-success mb-3" id="addRow">+ Add Course</button>
@@ -59,35 +100,36 @@
 @endsection
 @section('custom-script')
     <script>
+        let index = {{ $collegeCourses->count() }};
         let courses = @json($courses);
 
         $('#addRow').click(function () {
 
             let row = `
-                <tr>
-                    <td>
-                        <select name="courses[][course_id]" class="form-control course-select">
-                            <option value="">Select</option>
-                            ${courses.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
-                        </select>
-                    </td>
+        <tr>
+            <td>
+                <select name="courses[${index}][course_id]" class="form-control course-select">
+                    <option value="">Select</option>
+                    ${courses.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
+                </select>
+            </td>
 
-                    <td>
-                        <select name="courses[][specialization_id]" class="form-control spec-select">
-                            <option value="">Select</option>
-                        </select>
-                    </td>
+            <td>
+                <select name="courses[${index}][specialization_id]" class="form-control spec-select">
+                    <option value="">Select</option>
+                </select>
+            </td>
 
-                    <td><input type="number" name="courses[][fees]" class="form-control"></td>
+            <td><input type="number" name="courses[${index}][fees]" class="form-control"></td>
 
-                    <td>
-                        <input type="number" name="courses[][duration]" class="form-control" placeholder="3">
-                    </td>
+            <td><input type="number" name="courses[${index}][duration]" class="form-control"></td>
 
-                    <td><button type="button" class="btn btn-danger removeRow">X</button></td>
-                </tr>`;
+            <td><button type="button" class="btn btn-danger removeRow">X</button></td>
+        </tr>`;
 
             $('#courseTable tbody').append(row);
+
+            index++;
         });
         // Dependent Dropdown (Course → Specialization)
         $(document).on('change', '.course-select', function () {
