@@ -26,3 +26,5 @@ Route::post('/submit-scholarship', [HomeController::class, 'submitScholarship'])
 // Route::post('/submit-scholarship', [ScholarshipApplicationController::class, 'store']);
 
 
+Route::get('/college/{slug}', [HomeController::class, 'collegeDetails'])
+    ->name('college.show');

@@ -35,6 +35,12 @@
                             <span class="side-menu__label">College</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="side-menu__item" href="{{ route('admin.courses.manage') }}">
+                            <i class="side-menu__icon fa fa-tachometer" aria-hidden="true"></i>
+                            <span class="side-menu__label">Courses</span>
+                        </a>
+                    </li>
 
 
                     

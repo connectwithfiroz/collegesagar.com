@@ -12,8 +12,20 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 
 use App\Models\StudentEnquiry;
+use App\Models\College;
 class HomeController extends Controller
 {
+
+    public function collegeDetails($slug)
+    {
+        $college = College::with([
+            'locations',
+            'collegeCourses.course',
+            'collegeCourses.specialization'
+        ])->where('slug', $slug)->firstOrFail();
+
+        return view('frontend.college.show', compact('college'));
+    }
 
     public function submitScholarship(Request $request)
     {
@@ -29,7 +41,7 @@ class HomeController extends Controller
 
         $ip = $request->ip();
         $validated['ip_address'] = $ip;
- 
+
         // Limit enquiries per IP
         $count = StudentEnquiry::where('ip_address', $ip)->count();
 

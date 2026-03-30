@@ -21,6 +21,10 @@ class Specialization extends Model
             $model->slug = \Str::slug($model->name);
         });
     }
+    public function collegeCourses()
+    {
+        return $this->hasMany(CollegeCourse::class);
+    }
     // College::whereHas('locations', function ($q) {
     //     $q->where('city', 'Ahmedabad');
     // })

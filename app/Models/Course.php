@@ -13,6 +13,10 @@ class Course extends Model
     {
         return $this->hasMany(Specialization::class);
     }
+    public function collegeCourses()
+    {
+        return $this->hasMany(CollegeCourse::class);
+    }
     protected static function boot()
     {
         parent::boot();

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\CollegeController;
 use App\Http\Controllers\Admin\AdminprofileController;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\SpecializationController;
 
 
 Route::get('/login', [AdminHomeController::class, 'index'])->name('admin-login');
@@ -37,6 +39,11 @@ Route::group(['middleware' => 'admin'], function () {
 
         Route::post('admin/colleges/{college}/courses', [CollegeController::class, 'storeCourses'])
             ->name('colleges.courses.store');
+
+        Route::resource('courses', CourseController::class)->names('courses');
+        Route::get('admin/course-manage', [CourseController::class, 'manage'])
+            ->name('courses.manage');
+        Route::resource('specializations', SpecializationController::class)->names('specializations');
     });
 
 });
