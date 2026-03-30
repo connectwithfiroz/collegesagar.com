@@ -28,3 +28,10 @@ Route::post('/submit-scholarship', [HomeController::class, 'submitScholarship'])
 
 Route::get('/college/{slug}', [HomeController::class, 'collegeDetails'])
     ->name('college.show');
+
+// pending
+Route::get('/best-colleges-for-{course}', [HomeController::class, 'course'])
+    ->name('course.list');
+
+Route::get('/{course}-{specialization}-colleges', [HomeController::class, 'specialization'])
+    ->name('course.specialization');

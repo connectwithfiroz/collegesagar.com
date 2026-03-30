@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
-use App\Models\Faq;
-use App\Models\Product;
-use App\Models\Donation;
+use App\Models\College;
+use App\Models\CollegeCourse;
+use App\Models\Course;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 
 use App\Models\StudentEnquiry;
-use App\Models\College;
+use App\Models\Specialization;
 class HomeController extends Controller
 {
 
@@ -124,10 +124,36 @@ class HomeController extends Controller
             'message' => "Thank you {$enquiry->name}. Our team will contact you shortly."
         ]);
     }
+   
+
     public function index()
     {
-        return redirect('/website/index.html');
+        $courses = Course::with('specializations')->get();
+
+
+        return view('frontend.index', compact('courses'));
     }
+
+
+    public function course($courseSlug)
+    {
+        $course = Course::where('slug', $courseSlug)->firstOrFail();
+
+        return view('frontend.course.list', compact('course'));
+    }
+
+    public function specialization($courseSlug, $specSlug)
+    {
+        $course = Course::where('slug', $courseSlug)->firstOrFail();
+
+        $specialization = Specialization::where('slug', $specSlug)
+            ->where('course_id', $course->id)
+            ->firstOrFail();
+
+        return view('frontend.course.specialization', compact('course', 'specialization'));
+    }
+
+    // return redirect('/website/index.html');
     public function sendMail(Request $request)
     {
         // Validate the form input
