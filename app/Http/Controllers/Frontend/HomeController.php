@@ -24,7 +24,7 @@ class HomeController extends Controller
             'collegeCourses.specialization'
         ])->where('slug', $slug)->firstOrFail();
 
-        return view('frontend.college.show', compact('college'));
+        return view('frontend.college.college_details', compact('college'));
     }
 
     public function submitScholarship(Request $request)

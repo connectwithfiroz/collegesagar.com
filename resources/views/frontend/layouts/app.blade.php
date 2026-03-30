@@ -42,58 +42,15 @@
 
             <div class="collapse navbar-collapse" id="navContent">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Home</a></li>
 
-                    <li class="nav-item dropdown ms-lg-2">
-                        <a class="nav-link dropdown-toggle btn-main shadow-sm" href="#" id="dropMenu"
-                            data-bs-toggle="dropdown">
-                            Study India
-                        </a>
-                        <div class="dropdown-menu floating-card">
-                            <a href="{{ route('study_in_karnataka') }}" class="course-link">Karnataka</a>
-                            <a href="{{ route('study_in_bengaluru') }}" class="course-link">Bengaluru</a>
-                            <a href="{{ route('study_in_tamilnadu') }}" class="course-link">Tamilnadu</a>
-                        </div>
-                    </li>
-                     <li class="nav-item dropdown ms-lg-2">
-                        <a class="nav-link dropdown-toggle btn-main shadow-sm" href="#" id="dropMenu"
-                            data-bs-toggle="dropdown">
-                            Study Abrod
-                        </a>
-                        <div class="dropdown-menu floating-card">
-                            <a href="{{ route('study_in_abroad') }}" class="course-link">MBBS in Kyrgyzstan</a>
-                           
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown ms-lg-2">
-                        <a class="nav-link dropdown-toggle btn-main shadow-sm" href="#" id="dropMenu"
-                            data-bs-toggle="dropdown">
-                            Explore Courses
-                        </a>
-                        <div class="dropdown-menu floating-card">
-                            <a href="{{ route('medical_science') }}" class="course-link">Medical Sciences</a>
-                            <a href="{{ route('engineering') }}" class="course-link">Engineering</a>
-                            <a href="{{ route('paramedical') }}" class="course-link">Paramedical</a>
-                            <a href="{{ route('health_science') }}" class="course-link">Allied / Health Science</a>
-                            <a href="{{ route('nursing') }}" class="course-link">Nursing</a>
-                            <a href="{{ route('pharmacy') }}" class="course-link">Pharmacy</a>
-                            <a href="{{ route('management') }}" class="course-link">Management</a>
-                            <a href="{{ route('diploma-iti') }}" class="course-link"> ITI & Diploma</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link p-0 text-success fw-bold" href="{{ route('contact') }}"
-                            style="font-size: 0.85rem; letter-spacing: 1px;">CONTACT US</a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
 
-    @yield('section')
+    @yield('content')
     
 
     <!-- Footer Section -->
@@ -103,7 +60,7 @@
             <div class="row g-5">
 
                 <div class="col-lg-4 col-md-12">
-                    <a class="navbar-brand text-white fs-2 mb-4 d-block fw-800" href="{{ route('index') }}"><span
+                    <a class="navbar-brand text-white fs-2 mb-4 d-block fw-800" href=""><span
                             class="text-success">StudySparrow</span></a>
                     <p class="text-light-50 opacity-75 mb-4" style="line-height: 1.8;">
                         India’s leading admission consultancy, helping thousands of students secure their future in top medical, engineering, and management colleges worldwide—your career is our mission.
@@ -116,29 +73,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h5 class="fw-bold mb-4 text-success">Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="{{ route('index') }}">Home</a></li>
-                        <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                        <li><a href="{{ route('our_developer') }}">Our Developer</a></li>
-                        <li><a href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
-                         <li><a href="{{ route('term_condition') }}">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6">
-                    <h5 class="fw-bold mb-4 text-success">Top Courses</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="{{ route('medical_science') }}">Medical Science </a></li>
-                        <li><a href="{{ route('engineering') }}">Engineering</a></li>
-                        <li><a href="{{ route('nursing') }}">Nursing</a></li>
-                        <li><a href="{{ route('pharmacy') }}">Pharmacy</a></li>
-                        <li><a href="{{ route('management') }}">Management</a></li>
-                        <li><a href="{{ route('paramedical') }}">Paramedical</a></li>
-                    </ul>
-                </div>
+                \
 
                 <div class="col-lg-4 col-md-4">
                     <h5 class="fw-bold mb-4 text-success">Find Our Office</h5>
