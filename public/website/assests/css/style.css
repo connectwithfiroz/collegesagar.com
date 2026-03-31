@@ -201,6 +201,8 @@ body {
     font-weight: 700;
     font-size: 0.75rem;
     transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-apply-now:hover {
@@ -1238,7 +1240,7 @@ h3.section-title {
 /* Carousel Styling */
 .hero-slider {
     position: relative;
-    height: 80vh;
+    height: 70vh;
     /* Fixed height for consistency */
     min-height: 500px;
     overflow: hidden;
