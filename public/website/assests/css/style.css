@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--surface-bg);
     color: #1e293b;
     overflow-x: hidden;
@@ -54,14 +54,15 @@ body {
 
 /* --- HERO --- */
 .hero-section {
-
     padding: 60px 0;
     border-bottom: 1px solid #f1f5f9;
 }
 
 /* Speed up the transition to 0.3 seconds */
 .carousel-item {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+    transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out !important;
 }
 
 /* Ensure smooth rendering during fast movement */
@@ -83,7 +84,13 @@ body {
     white-space: nowrap;
     padding: 15px 0;
     position: relative;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 }
 
 .course-track {
@@ -233,7 +240,6 @@ body {
     justify-content: center;
 }
 
-
 /* University section styling */
 :root {
     --brand-blue: #003366;
@@ -244,7 +250,7 @@ body {
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 
     /* padding-top: 50px; */
 }
@@ -487,7 +493,7 @@ body {
 
 body {
     background-color: var(--bg-light);
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: "Segoe UI", Roboto, sans-serif;
     color: var(--text-dark);
 }
 
@@ -784,7 +790,7 @@ body {
 }
 
 /* Animation for search icon when typing */
-#hostelSearch:focus+.input-group-text i {
+#hostelSearch:focus + .input-group-text i {
     transform: scale(1.1);
     color: var(--brand-blue);
 }
@@ -801,7 +807,7 @@ body {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--bg-pure);
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
@@ -811,7 +817,7 @@ h1,
 h2,
 h3,
 .sora {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
 }
 
 /* Top Navigation Decor */
@@ -909,13 +915,17 @@ h3,
 }
 
 .card-visual::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(
+        circle,
+        rgba(255, 193, 7, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
 }
 
 .status-pill {
@@ -1223,7 +1233,16 @@ h3.section-title {
     margin-bottom: 25px;
     text-align: left;
 }
-
+/* Carousel Styling */
+.hero-slider {
+    position: relative;
+    height: 60vh;
+    /* Fixed height for consistency */
+    min-height: auto;
+    overflow: hidden;
+    border-radius: 0 0 50px 50px;
+    /* Matching your university theme */
+}
 @media (max-width: 768px) {
     .hero-title {
         font-size: 1.8rem;
@@ -1233,24 +1252,21 @@ h3.section-title {
         margin-top: -40px;
         padding: 20px;
     }
-}
-
-/* Carousel Styling */
-.hero-slider {
-    position: relative;
-    height: 80vh;
-    /* Fixed height for consistency */
-    min-height: 500px;
-    overflow: hidden;
-    border-radius: 0 0 50px 50px;
-    /* Matching your university theme */
+    .hero-slider {
+        position: relative;
+        height: 80vh;
+        /* Fixed height for consistency */
+        min-height: 500px;
+        overflow: hidden;
+        border-radius: 0 0 50px 50px;
+        /* Matching your university theme */
+    }
 }
 
 .carousel-item {
     height: 80vh;
     min-height: 500px;
 }
-
 
 .hero-slider,
 .carousel,
@@ -1261,11 +1277,11 @@ h3.section-title {
     border: none !important;
 }
 
-
 /* This is the magic for mobile */
 @media (max-width: 767px) {
     /* 1. Remove line-height gap */
-    .carousel-inner, .carousel-item {
+    .carousel-inner,
+    .carousel-item {
         line-height: 0 !important;
         font-size: 0 !important;
     }
@@ -1329,10 +1345,8 @@ h3.section-title {
     border: none !important;
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
-
     .hero-slider,
     .carousel-item {
         height: 0vh;
@@ -1348,12 +1362,13 @@ h3.section-title {
     --primary-indigo: #6366f1;
     --accent-yellow: #fbbf24;
     --soft-bg: #f8fafc;
-    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --card-shadow:
+        0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 body {
     background-color: var(--soft-bg);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 /* Card Container */
