@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,16 +23,19 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('website/assests/image/log.png') }}" alt style="height: 100px;"
-                    width="120px;" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('website/assests/image/log.png') }}" alt
+                    style="height: 100px;" width="120px;" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="bi bi-list"></span>
             </button>
             <div class="collapse navbar-collapse" id="navContent" 1>
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{ route('index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('colleges') ? 'active' : '' }}" href="{{ route('colleges') }}">College</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}"
+                            href="{{ route('index') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
+                            href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('colleges') ? 'active' : '' }}"
+                            href="{{ route('colleges') }}">College</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
@@ -102,15 +105,11 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
-
+    <!-- bootstrap and jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    @stack('footer')
     
-
-
 </body>
 
 </html>

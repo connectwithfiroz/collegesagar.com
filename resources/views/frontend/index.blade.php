@@ -17,56 +17,40 @@
 @section('content')
 
     <!-- new section -->
-    <section class="container-fluid py-5"
-        style="background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); min-height: 80vh; display: flex; align-items: center;">
-        <div class="container">
-            <div class="row align-items-center g-5">
+    <section class="bg-primary text-white py-5">
+    <div class="container text-center">
 
-                <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold text-dark mb-3">Find Your Path with <span
-                            class="text-primary">CollegeSagar</span></h1>
-                    <p class="lead text-muted mb-4">India’s trusted companion for 10th & 12th graduates. Whether you know
-                        your destination or need help finding it, we are here for you.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#explore" class="btn btn-primary btn-lg px-4 fw-semibold">Start Exploring</a>
-                        <a href="#guide" class="btn btn-outline-primary btn-lg px-4 fw-semibold">Take Career Quiz</a>
-                    </div>
-                </div>
+        <h1 class="fw-bold">Find the Best College for Your Future</h1>
+        <p class="mb-4">Search courses, compare colleges & apply easily</p>
 
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="card border-0 shadow-lg rounded-4 p-4">
-                        <h5 class="fw-bold mb-4 text-center">Where do you want to start?</h5>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-                        <div class="mb-4">
-                            <label class="small fw-bold text-muted mb-2">Search by College Name</label>
-                            <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="e.g. IIT Bombay, DU...">
-                                <button class="btn btn-primary">Search</button>
-                            </div>
+                <div class="bg-white p-3 rounded shadow">
+
+                    <div class="row g-2">
+
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" placeholder="Search course (B.Tech, MBA...)">
                         </div>
 
-                        <hr class="my-4">
-
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-light w-100 py-3 border fw-semibold">
-                                    <i class="bi bi-book-half d-block fs-4 mb-1 text-primary"></i>
-                                    By Stream
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="btn btn-success w-100 py-3 text-white fw-semibold">
-                                    <i class="bi bi-compass-fill d-block fs-4 mb-1"></i>
-                                    Career Guide
-                                </a>
-                            </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="City (Delhi, Noida...)">
                         </div>
+
+                        <div class="col-md-3">
+                            <button class="btn btn-primary w-100">Search</button>
+                        </div>
+
                     </div>
+
                 </div>
 
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
     <!-- new section -->
 
     <div class="container mt-4">
@@ -75,7 +59,7 @@
 
                 @foreach($courses as $course)
                     <div class="course-card-mini">
-                        <a href="{{ url('best-colleges-for-' . $course->slug) }}"
+                        <a href="{{ url('best-colleges-for-' . $course->slug . '-in-india') }}"
                             class="text-decoration-none">{{ $course->name }}</a>
 
                     </div>
@@ -174,328 +158,21 @@
             <button class="nav-btn btn-prev" onclick="handleSlide('left')"><i class="bi bi-chevron-left"></i></button>
             <button class="nav-btn btn-next" onclick="handleSlide('right')"><i class="bi bi-chevron-right"></i></button>
 
-            <div class="custom-slider" id="uni-slider">
-                <!-- 1 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.8 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/vgi-img.png') }}" alt alt="IIMA">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/vgi-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Vishveshwarya Group Of Institutions</div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Gratter Noida Dadri </div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Tech Computer Science</div>
-                                <div class="u-fee">₹ 27.50 L <span>/ Total Fees</span></div>
+            <div class="custom-slider" id="college-slider">
 
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/vgi-details.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/vgi-broucher.pdf" download="Vishveshwaraya Group of College.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill"
-                                    onclick="saveCollege('Vishveshwarya Group Of Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.9 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/dindyal.png') }}" alt alt="IITB">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/dindyal-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Dayal Group of Institutions</div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Lucknow | PCI</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Tech Computer Science</div>
-                                <div class="u-fee">₹ 8.82 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/dyalcollege.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/dyal-group-institutions.pdf"
-                                    download="Dayal Group of Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill" onclick="saveCollege('Dayal Group of Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.5 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/mc-sexena.JPG') }}" alt alt="CU">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/mc-sexenalogo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Dr. M. C. Saxena Group of Institutions</div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Lucknow | AICTE</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">BE Artificial Intelligence</div>
-                                <div class="u-fee">₹ 11.72 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/saxenacollege.html" class="btn-link-view">View All Details
-                                <i class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Dr.mc-saxena.pdf"
-                                    download="Dr. M. C. Saxena Group of Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill"
-                                    onclick="saveCollege('Dr. M. C. Saxena Group of Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 4 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.6 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/himalaya.jpg') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/himalya-logo.jpg') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Himalayan Group of Institutions </div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Lucknow (U.P)</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Tech Computer Science</div>
-                                <div class="u-fee">₹ 7.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/himalyagroup.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Himalayan-Group-of-Institutions.pdf"
-                                    download="Himalayan Group of Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill"
-                                    onclick="saveCollege('Himalayan Group of Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 5 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.3 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/guru-tej.jpg') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/guru-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Guru Tegh Bahadur Institute of Engineering & Technology </div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Ludhiana, Punjab</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Tech Computer Science</div>
-                                <div class="u-fee">₹ 7.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/gurutejcollege.html" class="btn-link-view">View All Details
-                                <i class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Guru-Tegh-Bahadur-Institute.pdf"
-                                    download="Guru Tegh Bahadur Institute of Engineering & Technology.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill" onclick="saveCollege('Guru Tegh Bahadur Institute ')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 6 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.2 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/puran.jpg') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/puran-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Puran Murti Group of Institutions </div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Sonipat, Haryana</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Tech Computer Science</div>
-                                <div class="u-fee">₹ 9.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/puranmurti.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Puran-Murti-Group-of-Institutions.pdf"
-                                    download="Puran Murti Group of Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill"
-                                    onclick="saveCollege('Puran Murti Group of Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 7 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.2 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/Excel_College.png') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/excel-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Excel Institutions </div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Salem, Tamil Nadu, India</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.E / B.Tech</div>
-                                <div class="u-fee">₹ 7.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/excle-institutions.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Excel-Group-of-Institutions.pdf"
-                                    download="Excel Group of Institution.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill" onclick="saveCollege('Excel Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 8th box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.2 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/kavery-img.jpg') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/kavery-logo.png') }}" alt
-                                    class="img-fluid" alt="logo">
-                            </div>
-                        </div>
-                        <div class="u-body">
-                            <div class="u-title">Kavery Institutions </div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i>Salem, Tamil Nadu, India</div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.E / B.Tech</div>
-                                <div class="u-fee">₹ 6.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/kavery-institute.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Kavery-Group-of-Institutions.pdf"
-                                    download="Kavery Group of Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill" onclick="saveCollege('Kavery Institutions')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- LOADER -->
+                <div id="college-loader" class="d-flex gap-3 overflow-auto">
 
-                <!-- 9 box -->
-                <div class="slider-card-container">
-                    <div class="u-card">
-                        <div class="u-banner">
-                            <span class="u-rating">4.2 <i class="bi bi-star-fill ms-1"></i></span>
-                            <img src="{{ asset('website/assests/college-img/vivekanandha-img.jpg') }}" alt alt="VIT">
-                            <div class="u-logo"><img src="{{ asset('website/assests/college-img/vivekanandha-logo.png') }}"
-                                    alt class="img-fluid" alt="logo">
+                    @for($i = 0; $i < 3; $i++)
+                        <div class="slider-card-container">
+                            <div class="u-card p-3">
+                                <div class="bg-light mb-2" style="height:120px;"></div>
+                                <div class="bg-light mb-2" style="height:20px;"></div>
+                                <div class="bg-light mb-2" style="height:15px;"></div>
                             </div>
                         </div>
-                        <div class="u-body">
-                            <div class="u-title">Vivekananda College of Nursing</div>
-                            <div class="u-meta"><i class="bi bi-geo-alt"></i> Turuvanoor Road, Chitradurga, Karnataka
-                            </div>
-                            <div class="u-course-box">
-                                <div class="u-course-name">B.Sc Nursing</div>
-                                <div class="u-fee">₹ 2.80 L <span>/ Total Fees</span></div>
-                            </div>
-                        </div>
-                        <div class="u-footer">
-                            <a href="collegedetails/vivekanandha.html" class="btn-link-view">View All Details <i
-                                    class="bi bi-arrow-right small"></i></a>
-                            <div class="d-flex gap-2">
-                                <a href="assests/broucher/Vivekanandha-Educational-Institutions.pdf"
-                                    download="Vivekanandha Educational Institutions.pdf">
-                                    <button class="btn-brochure flex-fill">
-                                        <i class="bi bi-download"></i>
-                                    </button>
-                                </a>
-                                <a href="form.html" class="flex-fill"
-                                    onclick="saveCollege('Vivekananda College of Nursing')">
-                                    <button class="btn-apply-now w-100">Apply Now</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endfor
+
                 </div>
 
             </div>
@@ -776,8 +453,8 @@
                                 <span class="badge bg-blue-subtle text-primary border-0 px-3"
                                     style="background: #eef2ff;">Private</span>
                                 <!-- <span class="badge bg-light text-secondary border-0 fw-normal">NIRF Ranking 151-200
-                                                    by
-                                                    NIRF 2025 </span> -->
+                                                                by
+                                                                NIRF 2025 </span> -->
                             </div>
                         </div>
                     </div>
@@ -880,7 +557,7 @@
                                 <span class="badge bg-blue-subtle text-primary border-0 px-3"
                                     style="background: #eef2ff;">Private</span>
                                 <!-- <span class="badge bg-light text-secondary border-0 fw-normal">NIRF Ranking 170 by
-                                                    NIRF 2025 </span> -->
+                                                                NIRF 2025 </span> -->
                             </div>
                         </div>
                     </div>
@@ -1292,184 +969,17 @@
             <button type="button" class="btn btn-primary btn-lg px-4">Explore Now</button>
         </div>
     </a>
-    <!-- Find Near BY PG And Hostel -->
-    <!-- <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 p-3 bg-white shadow-sm rounded-4"
-                        style="border: 1px solid #edf2f7; margin-left:100px; margin-right:100px;">
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
-                            <h4 class="fw-bold mb-1" style="color: #1e293b; ">Find Nearby Hostel/PG</h4>
-                            <p class="text-muted small mb-0">Discover 100% Scholarship verified stays near your campus</p>
-                        </div>
+   
+    <section class="bg-dark text-white py-5 text-center">
+    <div class="container">
 
-                        <div class="col-12 col-md-6 d-flex gap-2">
-                            <div class="input-group search-box-container shadow-sm flex-grow-1">
-                                <span class="input-group-text bg-white border-end-0 py-2">
-                                    <i class="bi bi-search text-primary"></i>
-                                </span>
-                                <input type="text" class="form-control border-start-0 shadow-none ps-0 py-2" id="hostelSearch"
-                                    onkeyup="filterHostels()" placeholder="Search by location or hostel name...">
+        <h3>Not sure which college is best for you?</h3>
+        <p>Let our experts guide you</p>
 
-                                <span class="input-group-text bg-white border-start-0 py-2">
-                                    <i class="bi bi-geo-alt text-danger" style="cursor: pointer;" title="Detect my location"></i>
-                                </span>
-                            </div>
+        <button class="btn btn-warning btn-lg">Get Free Counseling</button>
 
-                            <div class="dropdown">
-                                <button class="btn btn-outline-primary dropdown-toggle rounded-3 py-2 px-3" type="button"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bi bi-filter-left me-1"></i> Filter
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                                    <li><a class="dropdown-item" href="#"> <i class="bi bi-gender-male me-2"></i> Male Only</a></li>
-                                    <li><a class="dropdown-item" href="#"> <i class="bi bi-gender-female me-2"></i> Female Only</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"> <i class="bi bi-currency-rupee me-2"></i> Low to High</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-
-    <!-- <div class="container py-5">
-                        <div class="hostel-card bg-white p-3 shadow-sm position-relative overflow-hidden"
-                            style="border-radius: 24px; border: 1px solid #f1f5f9;">
-                            <div class="row g-4">
-                                <div class="col-md-5 col-lg-4">
-                                    <div class="position-relative h-100">
-                                        <img src="{{ asset('website/assests/image/room.jpg') }}" alt class="img-fluid rounded-4 h-100 w-100 shadow-sm"
-                                            style="object-fit: cover; min-height: 300px;" alt="Hostel Room">
-                                        <div class="position-absolute top-0 start-0 m-3 d-flex gap-2">
-                                            <span
-                                                class="badge rounded-pill bg-warning text-dark px-3 py-2 fw-bold shadow-sm">LUXURY</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7 col-lg-8 d-flex flex-column">
-                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <div>
-                                            <h3 class="fw-bold mb-1" style="color: #0f172a;">Mangal Hostel</h3>
-                                            <p class="text-muted small"><i class="bi bi-geo-alt-fill text-danger me-1"></i>
-                                                Knowledge
-                                                Park III, Greater Noida</p>
-                                        </div>
-                                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3 fw-600">
-                                            <i class="bi bi-compass me-1"></i> View direction
-                                        </button>
-                                    </div>
-
-                                    <div class="d-flex flex-wrap gap-4 my-3 text-secondary" style="font-size: 13px;">
-                                        <span><i class="bi bi-snow text-primary me-1"></i> AC Available</span>
-                                        <span><i class="bi bi-droplet text-primary me-1"></i> Attached Washroom</span>
-                                        <span><i class="bi bi-cup-hot text-primary me-1"></i> Food Available</span>
-                                    </div>
-
-                                    <div class="mb-4">
-                                        <label class="form-label fw-bold text-dark small mb-3">SELECT OCCUPANCY</label>
-                                        <div class="d-flex gap-3" id="roomSelector">
-                                            <button class="btn btn-room active" onclick="updatePrice(this, 12000, 'Single')">
-                                                <i class="bi bi-person-fill me-2"></i>Single Bed
-                                            </button>
-                                            <button class="btn btn-room" onclick="updatePrice(this, 8500, 'Double')">
-                                                <i class="bi bi-people-fill me-2"></i>Double Bed
-                                            </button>
-                                            <button class="btn btn-room" onclick="updatePrice(this, 6500, 'Triple')">
-                                                <i class="bi bi-group me-2"></i>Triple Bed
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-auto p-3 rounded-4 bg-light d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <small class="text-muted d-block fw-500">Starts from</small>
-                                            <div class="d-flex align-items-baseline gap-1">
-                                                <h3 class="fw-bold mb-0" class="displayPrice" style="color: #1a73e8; transition: 0.3s;">
-                                                    ₹12,000</h3>
-                                                <span class="text-muted" style="font-size: 14px;">/month</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="btn btn-visit">Schedule a Visit</button>
-                                            <button class="btn btn-brand-primary shadow-blue">Request to Call</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
-    <!-- 2--box -->
-    <!-- <div class="hostel-card bg-white p-3 shadow-sm position-relative overflow-hidden"
-                            style="border-radius: 24px; border: 1px solid #f1f5f9;">
-                            <div class="row g-4">
-                                <div class="col-md-5 col-lg-4">
-                                    <div class="position-relative h-100">
-                                        <img src="{{ asset('website/assests/image/room-2.jpg') }}" alt class="img-fluid rounded-4 h-100 w-100 shadow-sm"
-                                            style="object-fit: cover; min-height: 300px;" alt="Hostel Room">
-                                        <div class="position-absolute top-0 start-0 m-3 d-flex gap-2">
-                                            <span
-                                                class="badge rounded-pill bg-warning text-dark px-3 py-2 fw-bold shadow-sm">LUXURY</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7 col-lg-8 d-flex flex-column">
-                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <div>
-                                            <h3 class="fw-bold mb-1" style="color: #0f172a;">Annapurna Hostels</h3>
-                                            <p class="text-muted small"><i class="bi bi-geo-alt-fill text-danger me-1"></i>
-                                                Knowledge
-                                                Park III, Greater Noida</p>
-                                        </div>
-                                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3 fw-600">
-                                            <i class="bi bi-compass me-1"></i> View direction
-                                        </button>
-                                    </div>
-
-                                    <div class="d-flex flex-wrap gap-4 my-3 text-secondary" style="font-size: 13px;">
-                                        <span><i class="bi bi-snow text-primary me-1"></i> AC Available</span>
-                                        <span><i class="bi bi-droplet text-primary me-1"></i> Attached Washroom</span>
-                                        <span><i class="bi bi-cup-hot text-primary me-1"></i> Food Available</span>
-                                    </div>
-
-                                    <div class="mb-4">
-                                        <label class="form-label fw-bold text-dark small mb-3">SELECT OCCUPANCY</label>
-                                        <div class="d-flex gap-3" id="roomSelector">
-                                            <button class="btn btn-room active" onclick="updatePrice(this, 12000, 'Single')">
-                                                <i class="bi bi-person-fill me-2"></i>Single Bed
-                                            </button>
-                                            <button class="btn btn-room" onclick="updatePrice(this, 8500, 'Double')">
-                                                <i class="bi bi-people-fill me-2"></i>Double Bed
-                                            </button>
-                                            <button class="btn btn-room" onclick="updatePrice(this, 6500, 'Triple')">
-                                                <i class="bi bi-group me-2"></i>Triple Bed
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-auto p-3 rounded-4 bg-light d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <small class="text-muted d-block fw-500">Starts from</small>
-                                            <div class="d-flex align-items-baseline gap-1">
-                                                <h3 class="fw-bold mb-0" class="displayPrice" style="color: #1a73e8; transition: 0.3s;">
-                                                    ₹12,000</h3>
-                                                <span class="text-muted" style="font-size: 14px;">/month</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button class="btn btn-visit">Schedule a Visit</button>
-                                            <button class="btn btn-brand-primary shadow-blue">Request to Call</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-    <!-- Career path Section -->
+    </div>
+</section>
 
 
     <div class="container pb-5">
@@ -1696,4 +1206,20 @@
 @endsection
 @push('footer')
     <!-- extra footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            fetch("{{ route('ajax.colleges') }}")
+                .then(res => res.text())
+                .then(html => {
+
+                    document.getElementById('college-slider').innerHTML = html;
+
+                })
+                .catch(() => {
+                    document.getElementById('college-loader').innerHTML = "Failed to load";
+                });
+
+        });
+    </script>
 @endpush

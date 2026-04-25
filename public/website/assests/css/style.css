@@ -119,7 +119,23 @@ a.nav-link.active {
     color: var(--brand-primary);
     background: #f0f7ff;
 }
+.course-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollSlider 20s linear infinite;
+}
 
+@keyframes scrollSlider {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.course-slider-wrap:hover .course-track {
+    animation-play-state: paused;
+}
 @keyframes scrollCourses {
     0% {
         transform: translateX(0);

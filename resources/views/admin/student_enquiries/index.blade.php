@@ -33,10 +33,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>College</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>College</th>
                                     <th>Course</th>
+                                    <th>Specialization</th>
                                     <th>Phone</th>
                                     <th>Message</th>
                                     <th>Source Page</th>
@@ -66,10 +67,11 @@
 
                 columns: [
                     { data: 'id' },
-                    { data: 'college' },
                     { data: 'name' },
                     { data: 'email' },
-                    { data: 'course' },
+                    { data: 'college.name' },
+                    { data: 'course.name' },
+                    { data: 'specialization.name' },
                     { data: 'phone' },
                     { data: 'message' },
                     { data: 'source_page' },
