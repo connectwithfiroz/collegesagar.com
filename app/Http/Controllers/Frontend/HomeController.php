@@ -19,15 +19,16 @@ class HomeController extends Controller
     public function bestColleges($slug)
     {
         $course = Course::where('slug', $slug)->firstOrFail();
-        $colleges = College::where('course_id', $course->id)
-            ->orderBy('rating', 'desc') // important for SEO
-            ->get();
+        $colleges = College::whereHas('collegeCourses.course', function ($q) use ($course) {
+            $q->where('id', $course->id);
+        })->orderBy('name', 'asc')->get();
 
         // SEO meta
         $title = "Best Colleges for {$course->name} in India (2026) – Fees, Ranking, Admission";
         $description = "Explore top {$course->name} colleges in India with fees, admission details, ranking, and placements. Compare best colleges now.";
+        $courses = Course::with('specializations')->orderBy('name')->get();     
 
-        return view('frontend.best-colleges', compact('course', 'colleges', 'title', 'description'));
+        return view('frontend.best-colleges', compact('course', 'colleges', 'title', 'description', 'courses'));
     }
     function getSpecializations(Request $request)
     {
