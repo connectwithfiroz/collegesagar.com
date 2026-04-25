@@ -178,4 +178,13 @@ class HomeController extends Controller
         // Redirect with success message
         return back()->with('success', 'Your message has been sent successfully!');
     }
+    function about()
+    {
+        return view('frontend.about');
+    }
+    function colleges()
+    {
+        $colleges = College::with('locations')->get();
+        return view('frontend.colleges', compact('colleges'));
+    }
 }

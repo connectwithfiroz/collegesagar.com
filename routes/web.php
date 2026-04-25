@@ -18,6 +18,8 @@ require __DIR__."/dev.php";
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/colleges', [HomeController::class, 'colleges'])->name('colleges');
 
 Route::post('/contact/send', [HomeController::class, 'sendMail'])->name('contact.send');
 Route::post('/submit-scholarship', [HomeController::class, 'submitScholarship'])->name('submit_scholarship');

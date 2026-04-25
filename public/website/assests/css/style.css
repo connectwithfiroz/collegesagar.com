@@ -36,7 +36,9 @@ body {
     font-weight: 700;
     /* or 'bold' */
 }
-
+a.nav-link.active {
+    color: var(--brand-primary) !important;
+}
 .btn-auth {
     background: var(--brand-deep);
     color: white;
