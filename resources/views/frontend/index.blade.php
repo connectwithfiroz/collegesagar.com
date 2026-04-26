@@ -11,49 +11,82 @@
     <!-- seo related  -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="Collegesagar Team">
+    <link rel="stylesheet" href="{{ asset('website/assests/css/index.css') }}">
 
 @endpush
 
 @section('content')
+    <!-- Search Sections -->
+    <section class="py-2 hero-animated"
+        style="background: linear-gradient(to bottom, #ffffff, #FAF3E0); overflow: hidden;  display: flex; align-items: center;">
+        <div class="container text-center">
 
-    <!-- new section -->
-    <section class="bg-primary text-white py-5">
-    <div class="container text-center">
+            <div class="reveal-text">
+                <h1 class="display-4 mb-2"
+                    style="font-family: 'Playfair Display', serif; color: var(--text-slate); font-weight: 700;">
+                    Find the <span class="css-typist"></span>
+                </h1>
+                <h2 class="h5 mb-4"
+                    style="font-family: 'Jost', sans-serif; font-weight: 400; color: #777; letter-spacing: 1px;">FOR
+                    YOUR BRIGHT FUTURE</h2>
+            </div>
 
-        <h1 class="fw-bold">Find the Best College for Your Future</h1>
-        <p class="mb-4">Search courses, compare colleges & apply easily</p>
+            <p class="lead fade-in-delayed" style="font-family: 'Jost', sans-serif; color: #666;">Over 5000+
+                Verified Colleges & Universities at your fingertips.</p>
 
-        <div class="row justify-content-center">
-            <div class="col-md-8">
 
-                <div class="bg-white p-3 rounded shadow">
+            <form method="GET" action="{{ route('colleges') }}">
 
-                    <div class="row g-2">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
 
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" placeholder="Search course (B.Tech, MBA...)">
-                        </div>
+                        <div class="bg-white p-3 rounded shadow">
+                            <p class="mb-2">Search courses, compare colleges & apply easily</p>
 
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="City (Delhi, Noida...)">
-                        </div>
+                            <div class="row g-2">
 
-                        <div class="col-md-3">
-                            <button class="btn btn-primary w-100">Search</button>
+                                <!-- COLLEGE SEARCH -->
+                                <div class="col-md-6">
+                                    <input type="text" name="search" class="form-control"
+                                        placeholder="Search college (IIT, NIT, Amity...)" value="{{ request('search') }}">
+                                </div>
+
+                                <!-- COURSE -->
+                                <div class="col-md-4">
+                                    <select name="course" class="form-select">
+                                        <option value="">All Courses</option>
+                                        @foreach($courses ?? [] as $course)
+                                            <option value="{{ $course->slug }}" {{ request('course') == $course->slug ? 'selected' : '' }}>
+                                                {{ $course->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <!-- BUTTON -->
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        Search
+                                    </button>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
 
-            </div>
+            </form>
         </div>
-
-    </div>
-</section>
-    <!-- new section -->
-
-    <div class="container mt-4">
+        </div>
+    </section>
+    <!-- Trending Courses -->
+    <div class="container mt-2">
+        <div class="section-header">
+            <h2 class="fw-bold mb-0">Trending courses</h2>
+            <p class="text-muted">Discover the most popular courses among students</p>
+        </div>
         <div class="course-slider-wrap">
             <div class="course-track">
 
@@ -68,83 +101,8 @@
             </div>
         </div>
     </div>
-    <!-- Select you Goal -->
-    <div class="container py-5">
-        <div class="section-header">
-            <h2 class="fw-bold mb-0">Define Your Study Path</h2>
-            <p class="text-muted">Choose your stream to see top colleges and exams</p>
-        </div>
-
-        <div class="slider-container">
-            <div class="slider-view-window">
-                <button class="nav-control prev-btn" onclick="moveSlider(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="nav-control next-btn" onclick="moveSlider(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-
-            </div>
-
-            <div class="cards-wrapper" id="mainSlider">
-
-                @foreach($courses as $course)
-
-                    <div class="goal-card p-4">
-
-                        <!-- HEADER -->
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="icon-holder me-3">
-                                <i class="bi bi-mortarboard"></i>
-                            </div>
-                            <div>
-                                <!-- COURSE CLICK -->
-                                <h5 class="mb-0 fw-bold">
-                                    <a href="{{ url('best-colleges-for-' . $course->slug) }}"
-                                        class="text-dark text-decoration-none">
-                                        {{ $course->name }}
-                                    </a>
-                                </h5>
-
-                                <small class="text-muted">
-                                    {{ $course->college_count ?? 0 }} Colleges
-                                </small>
-                            </div>
-                        </div>
-
-                        <!-- SPECIALIZATIONS -->
-                        <div class="course-list">
-
-                            @forelse($course->specializations->take(5) as $spec)
-
-                                <a href="{{ url($course->slug . '-' . $spec->slug . '-colleges') }}" class="course-item">
-
-                                    {{ $spec->name }}
-                                    <i class="bi bi-chevron-right small"></i>
-
-                                </a>
-
-                            @empty
-
-                                <!-- fallback if no specialization -->
-                                <a href="{{ url('best-colleges-for-' . $course->slug) }}" class="course-item">
-                                    View Colleges
-                                    <i class="bi bi-chevron-right small"></i>
-                                </a>
-
-                            @endforelse
-
-                        </div>
-
-                    </div>
-
-                @endforeach
-
-            </div>
-        </div>
-    </div>
-    <!-- End Select you study Goal -->
-    <!-- College sections  start-->
+    <!-- Trending Courses end -->
+         <!-- College sections  start-->
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4 px-2">
             <div>
@@ -178,10 +136,6 @@
             </div>
         </div>
     </div>
-
-
-
-
     <!-- University Sections -->
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4 px-2">
@@ -375,9 +329,100 @@
             </div>
         </div>
     </div>
+    
+    <!-- Select you Goal -->
+    <div class="container py-2">
+        <div class="section-header">
+            <h2 class="fw-bold mb-0">Define Your Study Path</h2>
+            <p class="text-muted">Choose your stream to see top colleges and exams</p>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-view-window">
+                <button class="nav-control prev-btn" onclick="moveSlider(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-control next-btn" onclick="moveSlider(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <div class="cards-wrapper" id="mainSlider">
+
+                @foreach($courses as $course)
+
+                    <div class="goal-card p-4">
+
+                        <!-- HEADER -->
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-holder me-3">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <div>
+                                <!-- COURSE CLICK -->
+                                <h5 class="mb-0 fw-bold">
+                                    <a href="{{ url('best-colleges-for-' . $course->slug) }}"
+                                        class="text-dark text-decoration-none">
+                                        {{ $course->name }}
+                                    </a>
+                                </h5>
+
+                                <small class="text-muted">
+                                    {{ $course->college_count ?? 0 }} Colleges
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- SPECIALIZATIONS -->
+                        <div class="course-list">
+
+                            @forelse($course->specializations->take(5) as $spec)
+
+                                <a href="{{ url($course->slug . '-' . $spec->slug . '-colleges') }}" class="course-item">
+
+                                    {{ $spec->name }}
+                                    <i class="bi bi-chevron-right small"></i>
+
+                                </a>
+
+                            @empty
+
+                                <!-- fallback if no specialization -->
+                                <a href="{{ url('best-colleges-for-' . $course->slug) }}" class="course-item">
+                                    View Colleges
+                                    <i class="bi bi-chevron-right small"></i>
+                                </a>
+
+                            @endforelse
+
+                        </div>
+
+                    </div>
+
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+    <!-- End Select you study Goal -->
+    <!-- confused section -->
+     <section class="bg-dark text-white py-2 text-center">
+        <div class="container">
+
+            <h3>Confused about what to do after your exams?</h3>
+            <p>Don't worry! It’s normal to be unsure. Let our AI guide help you pick the right career path based on what you
+                actually like.</p>
+
+            <button class="btn btn-warning btn-lg">Guide Me! <i class="bi bi-rocket-takeoff-fill ms-2"></i></button>
+
+        </div>
+    </section>
+    <!-- confused section end -->
+
 
     <!-- Top Collage in India   -->
-    <div class="container py-5">
+    <div class="container py-2">
         <div class="text-center mb-5">
             <h1 class="page-title fw-bold" style="font-size: 3rem;">Top Colleges in <span class="text-gradient">India</span>
             </h1>
@@ -397,27 +442,7 @@
             <div class="title-underline mx-auto"></div>
         </div>
 
-        <div class="search-stats-wrapper p-3 mb-5 shadow-sm bg-white rounded-4 d-flex align-items-center flex-wrap gap-3">
-            <div class="search-input-group flex-grow-1 position-relative">
-                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                <input type="text" class="form-control ps-5 py-2 border-light shadow-none rounded-3"
-                    style="background: #f8f9fa;" placeholder="Search colleges or locations...">
-            </div>
-            <div class="stat-box d-flex gap-4 border-start ps-4 ms-md-2">
-                <div class="stat-item text-center">
-                    <span class="stat-num text-primary fw-bold fs-5">100</span>
-                    <span class="stat-label d-block text-muted small">Colleges</span>
-                </div>
-                <div class="stat-item text-center">
-                    <span class="stat-num text-success fw-bold fs-5">82.3%</span>
-                    <span class="stat-label d-block text-muted small">Avg. Placement</span>
-                </div>
-                <div class="stat-item text-center">
-                    <span class="stat-num fw-bold fs-5" style="color: #a855f7;">₹6,44,333</span>
-                    <span class="stat-label d-block text-muted small">Avg. Package</span>
-                </div>
-            </div>
-        </div>
+
 
         <!-- 1-box -->
         <div class="row g-4">
@@ -453,8 +478,8 @@
                                 <span class="badge bg-blue-subtle text-primary border-0 px-3"
                                     style="background: #eef2ff;">Private</span>
                                 <!-- <span class="badge bg-light text-secondary border-0 fw-normal">NIRF Ranking 151-200
-                                                                by
-                                                                NIRF 2025 </span> -->
+                                                                                        by
+                                                                                        NIRF 2025 </span> -->
                             </div>
                         </div>
                     </div>
@@ -557,7 +582,7 @@
                                 <span class="badge bg-blue-subtle text-primary border-0 px-3"
                                     style="background: #eef2ff;">Private</span>
                                 <!-- <span class="badge bg-light text-secondary border-0 fw-normal">NIRF Ranking 170 by
-                                                                NIRF 2025 </span> -->
+                                                                                        NIRF 2025 </span> -->
                             </div>
                         </div>
                     </div>
@@ -595,7 +620,8 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/dyalcollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Dayal Group of Institutions')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
+                                onclick="saveCollege('Dayal Group of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -777,7 +803,8 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/himalyagroup.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Himalayan Group of Institutions')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
+                                onclick="saveCollege('Himalayan Group of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -859,7 +886,8 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/gurutejcollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Guru Tegh Bahadur Institute')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
+                                onclick="saveCollege('Guru Tegh Bahadur Institute')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -969,17 +997,17 @@
             <button type="button" class="btn btn-primary btn-lg px-4">Explore Now</button>
         </div>
     </a>
-   
-    <section class="bg-dark text-white py-5 text-center">
-    <div class="container">
 
-        <h3>Not sure which college is best for you?</h3>
-        <p>Let our experts guide you</p>
+    <section class="bg-dark text-white py-2 text-center">
+        <div class="container">
 
-        <button class="btn btn-warning btn-lg">Get Free Counseling</button>
+            <h3>Not sure which college is best for you?</h3>
+            <p>Let our experts guide you</p>
 
-    </div>
-</section>
+            <button class="btn btn-warning btn-lg">Get Free Counseling</button>
+
+        </div>
+    </section>
 
 
     <div class="container pb-5">
