@@ -41,7 +41,7 @@
                     <div class="col-md-8">
 
                         <div class="bg-white p-3 rounded shadow">
-                            <p class="mb-2">Search courses, compare colleges & apply easily</p>
+                            <p class="mb-2">Search by college or course to apply easily</p>
 
                             <div class="row g-2">
 
@@ -65,12 +65,15 @@
 
                                 <!-- BUTTON -->
                                 <div class="col-md-2">
-                                    <button type="submit" class="btn btn-primary w-100">
+                                    <button type="submit" class="btn btn-primary w-100  mt-2 mt-md-0">
                                         Search
                                     </button>
                                 </div>
 
                             </div>
+                            <p class="mt-2 mb-0">I'm not sure about the course I want to pursue. 
+                                <a href="{{ route('career.guide') }}" class="link ">Career Guide</a></p>
+                            
 
                         </div>
 

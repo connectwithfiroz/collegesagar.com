@@ -49,3 +49,5 @@ Route::post('/apply-now', [HomeController::class, 'applyNow'])
     ->name('apply.now');
 Route::get('/ajax/specializations', [HomeController::class, 'getSpecializations'])
     ->name('ajax.specializations');
+Route::get('/career-guide', [HomeController::class, 'careerGuide'])
+    ->name('career.guide');
