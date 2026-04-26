@@ -35,6 +35,7 @@ Route::get('/college/{slug}', [HomeController::class, 'collegeDetails'])
 // Route::get('/best-colleges-for-{course}', [HomeController::class, 'course'])
 //     ->name('course.list');
 Route::get('/best-colleges-for-{slug}-in-india', [HomeController::class, 'bestColleges'])->where('slug', '[A-Za-z0-9\-]+');
+Route::get('/{slug}-colleges', [HomeController::class, 'collegeByCourseAndSpecification'])->where('slug', '[A-Za-z0-9\-]+');
 
 Route::get('/{course}-{specialization}-colleges', [HomeController::class, 'specialization'])
     ->name('course.specialization');

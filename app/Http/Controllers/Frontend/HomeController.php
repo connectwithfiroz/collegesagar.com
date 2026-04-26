@@ -19,6 +19,7 @@ class HomeController extends Controller
     public function bestColleges($slug)
     {
         $course = Course::where('slug', $slug)->firstOrFail();
+        $course_id = $course->id;
         $colleges = College::whereHas('collegeCourses.course', function ($q) use ($course) {
             $q->where('id', $course->id);
         })->orderBy('name', 'asc')->get();
@@ -26,9 +27,9 @@ class HomeController extends Controller
         // SEO meta
         $title = "Best Colleges for {$course->name} in India (2026) – Fees, Ranking, Admission";
         $description = "Explore top {$course->name} colleges in India with fees, admission details, ranking, and placements. Compare best colleges now.";
-        $courses = Course::with('specializations')->orderBy('name')->get();     
+        $courses = Course::with('specializations')->orderBy('name')->get();
 
-        return view('frontend.best-colleges', compact('course', 'colleges', 'title', 'description', 'courses'));
+        return view('frontend.best-colleges', compact('course', 'colleges', 'title', 'description', 'courses', 'course_id'));
     }
     function getSpecializations(Request $request)
     {
@@ -308,9 +309,62 @@ class HomeController extends Controller
     {
         return view('frontend.about');
     }
-    function colleges()
+    public function colleges(Request $request)
     {
-        $colleges = College::with('locations')->get();
-        return view('frontend.colleges', compact('colleges'));
+        $query = College::with(['locations', 'collegeCourses.course', 'collegeCourses.specialization']);
+
+        // 🔍 Search
+        if ($request->search) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        // 📍 State
+        if ($request->state) {
+            $query->whereHas('locations', function ($q) use ($request) {
+                $q->where('state', $request->state);
+            });
+        }
+
+        // 🏙 City
+        if ($request->city) {
+            $query->whereHas('locations', function ($q) use ($request) {
+                $q->where('city', $request->city);
+            });
+        }
+
+        // 🎓 Course
+        if ($request->course) {
+            $query->whereHas('collegeCourses.course', function ($q) use ($request) {
+                $q->where('slug', $request->course);
+            });
+        }
+        if ($request->spec) {
+            $query->whereHas('collegeCourses.specialization', function ($q) use ($request) {
+                $q->where('slug', $request->spec);
+            });
+        }
+
+        // 💰 Fees
+        if ($request->fees) {
+            $query->whereHas('collegeCourses', function ($q) use ($request) {
+                $q->where('fees', '<=', $request->fees);
+            });
+        }
+
+        $colleges = $query->latest()->paginate(10);
+
+        // ✅ FETCH STATES & CITIES
+        $states = Location::select('state')
+            ->distinct()
+            ->orderBy('state')
+            ->pluck('state');
+
+        $cities = Location::select('city')
+            ->distinct()
+            ->orderBy('city')
+            ->pluck('city');
+        $courses = Course::with('specializations')->orderBy('name')->get();
+
+        return view('frontend.colleges', compact('colleges', 'states', 'cities', 'courses'));
     }
 }

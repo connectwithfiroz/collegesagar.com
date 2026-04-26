@@ -1,4 +1,4 @@
-@foreach($colleges as $college)
+@forelse($colleges as $college)
 
 <div class="slider-card-container">
     <div class="u-card">
@@ -21,7 +21,13 @@
                 {{ $college->locations->pluck('city')->join(', ') }}
             </div>
 
-            @php $cc = $college->collegeCourses->first(); @endphp
+            @php 
+            if(!empty($course_id)) {
+                $cc = $college->collegeCourses()->where('course_id', $course_id)->first();
+            } else {    
+                $cc = $college->collegeCourses->first(); 
+            }
+            @endphp
 
             @if($cc)
                 <div class="u-course-box">
@@ -59,5 +65,12 @@
 
     </div>
 </div>
-
-@endforeach
+@empty
+    <div class="text-center py-5">
+        <h5 class="text-muted">No colleges found for this course yet.</h5>
+        <!-- apply now btn -->
+        <a href="{{ route('apply.now_form') }}" class="btn btn-primary mt-3">
+            Apply Now  
+        </a> 
+    </div>
+@endforelse

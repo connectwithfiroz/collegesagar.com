@@ -17,7 +17,7 @@
             --glass: rgba(255, 255, 255, 0.95);
         }
 
-        
+
 
         .glass-card {
             background: var(--glass);
@@ -156,7 +156,7 @@
 
                             <!-- College -->
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="college" value="{{ request('college') }}"
+                                <input type="text" class="form-control" name="college" id="collegeInput" value="{{ request('college') }}"
                                     placeholder="Selected College" readonly>
                                 <label>College / Campus</label>
                             </div>
@@ -220,13 +220,20 @@
                                 <label>Career Goal (Optional)</label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100 mb-3">
-                                Submit Application
-                            </button>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ url()->previous() }}" class="btn btn-outline-secondary d-flex align-items-center gap-1">
+                                    <i class="fas fa-arrow-left"></i> &ThinSpace; Return
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-submit" style="width:auto;">
+                                    Submit Application
+                                </button>
+                            </div>
 
                             <p class="text-center small text-muted mb-0">
                                 Your information is safe & confidential.
                             </p>
+                            <!-- return back btn url->previous -->
+                            
                         </form>
                     </div>
 
@@ -261,6 +268,44 @@
     <!-- extra footer -->
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        window.onload = function () {
+            const collegeField = document.getElementById("collegeInput");
+            const savedCollege = localStorage.getItem("selectedCollege");
+
+            if (savedCollege) {
+                // Fill the field and lock it for premium UX
+                if (collegeField.value === "") {
+                    collegeField.value = savedCollege;
+                    collegeField.classList.add("college-locked");
+                    collegeField.readOnly = true;
+                }
+            } else {
+                // Allow manual entry if they didn't come from a card
+                collegeField.readOnly = false;
+                collegeField.placeholder = "Type College Name";
+                collegeField.classList.remove("college-locked");
+            }
+
+        };
+        // PROGRESS BAR LOGIC - Dynamic UI feedback
+        function updateProgress() {
+            const inputs = document.querySelectorAll(
+                ".form-control, .form-select",
+            );
+            let filledCount = 0;
+
+            inputs.forEach((input) => {
+                if (input.value.trim() !== "") {
+                    filledCount++;
+                }
+            });
+
+            const progress = (filledCount / inputs.length) * 100;
+            document.getElementById("progressBar").style.width =
+                progress + "%";
+        }
+    </script>
 
     <script>
         const selectedSpec = "{{ request('specialization_id') }}";

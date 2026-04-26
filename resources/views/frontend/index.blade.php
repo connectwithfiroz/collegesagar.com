@@ -362,7 +362,7 @@
                                         class="bi bi-arrow-right small"></i></a>
                                 <div class="d-flex gap-2">
                                     <button class="btn-brochure flex-fill"><i class="bi bi-download"></i></button>
-                                    <a href="form.html" class="flex-fill"
+                                    <a href="{{ route('apply.now_form') }}" class="flex-fill"
                                         onclick="saveCollege('BITS Pilani - Premiere Institute')">
                                         <button class="btn-apply-now w-100">Apply Now</button>
                                     </a>
@@ -519,7 +519,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/vgi-details.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill"
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
                                 onclick="saveCollege('Vishveshwaraya Group Of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
@@ -595,7 +595,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/dyalcollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill" onclick="saveCollege('Dayal Group of Institutions')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Dayal Group of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -684,7 +684,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/saxenacollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill"
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
                                 onclick="saveCollege('D.r M C Saxena Group Of Institutions ')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
@@ -777,7 +777,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/himalyagroup.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill" onclick="saveCollege('Himalayan Group of Institutions')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Himalayan Group of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -859,7 +859,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/gurutejcollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill" onclick="saveCollege('Guru Tegh Bahadur Institute')">
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill" onclick="saveCollege('Guru Tegh Bahadur Institute')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
                         </div>
@@ -954,7 +954,7 @@
                         <div class="d-flex gap-2">
                             <a href="collegedetails/gurutejcollege.html"><button class="btn btn-brand-outline">View
                                     Details</button></a>
-                            <a href="form.html" class="flex-fill"
+                            <a href="{{ route('apply.now_form') }}" class="flex-fill"
                                 onclick="saveCollege('Puran Murti Group Of Institutions')">
                                 <button class="btn-apply-now w-100">Apply Now</button>
                             </a>
@@ -994,7 +994,7 @@
                 </p>
 
                 <div class="d-flex gap-3 mb-5 justify-content-center justify-content-lg-start">
-                    <a href="form.html" class="btn-action">
+                    <a href="{{ route('apply.now_form') }}" class="btn-action">
                         Start AI Assessment <i data-lucide="arrow-right"></i>
                     </a>
                 </div>
