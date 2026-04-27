@@ -18,15 +18,15 @@
             <!--page-header closed-->
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <h4>Student Enquiries</h4>
+                        <div class="card-header d-flex justify-content-between">
+                            <h4>Student Enquiries</h4>
 
-                        <a href="{{ route('admin.student.enquiries.export') }}" class="btn btn-success px-2"
-                            style="width:auto;">
-                            Export Excel
-                        </a>
+                            <a href="{{ route('admin.student.enquiries.export') }}" class="btn btn-success px-2"
+                                style="width:auto;">
+                                Export Excel
+                            </a>
 
-                    </div>
+                        </div>
 
                     <div class="card-body overflow-auto">
                         <table class="table table-bordered" id="enquiryTable">
