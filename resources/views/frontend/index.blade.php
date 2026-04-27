@@ -72,7 +72,7 @@
 
                             </div>
                             <p class="mt-2 mb-0 fst-italic">I'm not sure about the course I want to pursue. 
-                                <a href="{{ route('career.guide') }}" class="link ">Career Guide</a></p>
+                                <a href="https://www.quizsagar.com/career-guide" class="link ">Career Guide</a></p>
                             
 
                         </div>
@@ -334,7 +334,7 @@
     </div>
     
     <!-- Select you Goal -->
-    <div class="container my-2">
+    <div class="container-fluid my-2">
         <div class="section-header">
             <h2 class="fw-bold mb-0">Define Your Study Path</h2>
             <p class="text-muted">Choose your stream to see top colleges and exams</p>
@@ -410,14 +410,14 @@
     </div>
     <!-- End Select you study Goal -->
     <!-- confused section -->
-     <section class="bg-dark text-white py-2 text-center">
+     <section class="bg-dark text-white py-2 text-center mb-2">
         <div class="container">
 
             <h3>Confused about what to do after your exams?</h3>
             <p>Don't worry! It’s normal to be unsure. Let our AI guide help you pick the right career path based on what you
                 actually like.</p>
 
-            <button class="btn btn-warning btn-lg">Guide Me! <i class="bi bi-rocket-takeoff-fill ms-2"></i></button>
+            <a class="btn btn-warning btn-lg" href="https://www.quizsagar.com/career-guide">Guide Me! <i class="bi bi-rocket-takeoff-fill ms-2"></i></a>
 
         </div>
     </section>
@@ -425,7 +425,7 @@
 
 
     <!-- Top Collage in India   -->
-    <div class="container pb-2">
+    <div class="container-fluid pb-2">
         <div class="text-center mb-5">
             <h1 class="page-title fw-bold" style="font-size: 3rem;">Top Colleges in <span class="text-gradient">India</span>
             </h1>
@@ -995,23 +995,23 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('colleges') }}">
-        <div class="d-flex justify-content-center py-4">
-            <button type="button" class="btn btn-primary btn-lg px-4">Explore Now</button>
-        </div>
-    </a>
+    
+    <div class="d-flex justify-content-center py-4">
+        <a type="button" class="btn btn-outline-primary" href="{{ route('colleges') }}">View All Colleges</a>
+    </div>
+    
 
     <section class="bg-dark text-white py-2 text-center container">
 
             <h3>Not sure which college is best for you?</h3>
             <p>Let our experts guide you</p>
 
-            <button class="btn btn-warning btn-lg">Get Free Counseling</button>
+            <a class="btn btn-warning btn-lg" href="{{  route('apply.now') }}?college=Not Sure">Get Free Counseling</a>
 
     </section>
 
 
-    <div class="container pb-2">
+    <div class="container-fluid pb-2">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
                 <h1 class="hero-title">

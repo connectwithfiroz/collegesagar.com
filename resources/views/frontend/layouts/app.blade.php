@@ -65,9 +65,9 @@
 
                 <div class="col-lg-2 col-md-6">
                     <h5 class="mb-4 fw-bold" style="margin-top:10px">Quick Links</h5>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="college.html" class="footer-link">Explore College</a>
+                    <a href="/" class="footer-link">Home</a>
+                    <a href="{{ route('about') }}" class="footer-link">About Us</a>
+                    <a href="{{  route('colleges') }}" class="footer-link">Explore College</a>
                     <a href="contact.html" class="footer-link">Contact Us</a>
                 </div>
 
@@ -75,9 +75,9 @@
                     <h5 class="mb-4 fw-bold" style="margin-top:10px">Academics</h5>
                     <a href="student-support.html" class="footer-link">Student Support</a>
                     <a href="scholarship.html" class="footer-link">Scholarship Evaluation</a>
-                    <a href="admission.html" class="footer-link">Admission Process</a>
-                    <a href="privacyPolicy.html" class="footer-link">Privacy Ploicy</a>
-                    <a href="term&condition.html" class="footer-link">Term & Conditions</a>
+                    <a href="{{ route('admission') }}" class="footer-link">Admission Process</a>
+                    <a href="{{  route('privacy_policy') }}" class="footer-link">Privacy Ploicy</a>
+                    <a href="{{ route('terms_condition')}}" class="footer-link">Term & Conditions</a>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
