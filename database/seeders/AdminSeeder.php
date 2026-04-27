@@ -14,12 +14,12 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $model = \App\Models\Admin::class;
-        if($model::where('id', 1)->doesntExist()){
+        if($model::where('email', 'admin@collegesagar.com')->doesntExist()){
             $model::create(
                 [
                     'id' => 1,
                     'name' => 'Admin',
-                    'email' => 'admin@gmail.com',
+                    'email' => 'admin@collegesagar.com',
                     'password' => Hash::make('12345678'),
                     'password_hint' => '1-8',
                     'phone' => '9712345678'

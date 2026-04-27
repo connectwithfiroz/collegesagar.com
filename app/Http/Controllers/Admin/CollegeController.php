@@ -87,9 +87,11 @@ class CollegeController extends Controller
                 $courses = route('admin.colleges.courses', $row->id);
                 $delete = route('admin.colleges.destroy', $row->id);
                 $view = route('college.show', $row->slug);
+                $meta = route('admin.colleges.edit.meta', $row->id); // New route
 
                 return '
                 <a href="' . $edit . '" class="btn btn-sm btn-primary">Edit</a>
+                <a href="' . $meta . '" class="btn btn-sm btn-warning">Advanced</a> <a href="' . $courses . '" class="btn btn-sm btn-info">Courses</a>
                 <a href="' . $courses . '" class="btn btn-sm btn-info">Courses</a>
                 <button data-url="' . $delete . '" class="btn btn-sm btn-danger deleteBtn">Delete</button>
                 <a href="'.$view.'" target="_blank" class="btn btn-sm btn-success">Preview</a>

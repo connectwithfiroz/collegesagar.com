@@ -17,7 +17,7 @@
 
 @section('content')
     <!-- Search Sections -->
-    <section class="py-2 hero-animated"
+    <section class="py-2 hero-animated container-fluid"
         style="background: linear-gradient(to bottom, #ffffff, #FAF3E0); overflow: hidden;  display: flex; align-items: center;">
         <div class="container text-center">
 
@@ -71,7 +71,7 @@
                                 </div>
 
                             </div>
-                            <p class="mt-2 mb-0">I'm not sure about the course I want to pursue. 
+                            <p class="mt-2 mb-0 fst-italic">I'm not sure about the course I want to pursue. 
                                 <a href="{{ route('career.guide') }}" class="link ">Career Guide</a></p>
                             
 
@@ -85,7 +85,7 @@
         </div>
     </section>
     <!-- Trending Courses -->
-    <div class="container mt-2">
+    <div class="container-fluid mt-2">
         <div class="section-header">
             <h2 class="fw-bold mb-0">Trending courses</h2>
             <p class="text-muted">Discover the most popular courses among students</p>
@@ -106,13 +106,13 @@
     </div>
     <!-- Trending Courses end -->
          <!-- College sections  start-->
-    <div class="container">
+    <div class="container-fluid my-1">
         <div class="d-flex justify-content-between align-items-center mb-4 px-2">
             <div>
                 <h2 class="fw-800 h4 mb-0">Top Featured College with UP to 100% Scholarship</h2>
                 <p class="text-muted small mb-0">Handpicked premium College for your career</p>
             </div>
-            <a href="college.html" class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-700">View All</a>
+            <a href="{{ route('colleges') }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-700">View All</a>
         </div>
 
         <div class="slider-wrapper">
@@ -140,7 +140,7 @@
         </div>
     </div>
     <!-- University Sections -->
-    <div class="container">
+    <div class="container-fluid my-1">
         <div class="d-flex justify-content-between align-items-center mb-4 px-2">
             <div>
                 <h2 class="fw-800 h4 mb-0">Top Featured Universities</h2>
@@ -334,7 +334,7 @@
     </div>
     
     <!-- Select you Goal -->
-    <div class="container py-2">
+    <div class="container my-2">
         <div class="section-header">
             <h2 class="fw-bold mb-0">Define Your Study Path</h2>
             <p class="text-muted">Choose your stream to see top colleges and exams</p>
@@ -425,7 +425,7 @@
 
 
     <!-- Top Collage in India   -->
-    <div class="container py-2">
+    <div class="container pb-2">
         <div class="text-center mb-5">
             <h1 class="page-title fw-bold" style="font-size: 3rem;">Top Colleges in <span class="text-gradient">India</span>
             </h1>
@@ -995,25 +995,23 @@
             </div>
         </div>
     </div>
-    <a href="college.html">
+    <a href="{{ route('colleges') }}">
         <div class="d-flex justify-content-center py-4">
             <button type="button" class="btn btn-primary btn-lg px-4">Explore Now</button>
         </div>
     </a>
 
-    <section class="bg-dark text-white py-2 text-center">
-        <div class="container">
+    <section class="bg-dark text-white py-2 text-center container">
 
             <h3>Not sure which college is best for you?</h3>
             <p>Let our experts guide you</p>
 
             <button class="btn btn-warning btn-lg">Get Free Counseling</button>
 
-        </div>
     </section>
 
 
-    <div class="container pb-5">
+    <div class="container pb-2">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
                 <h1 class="hero-title">
@@ -1109,7 +1107,7 @@
                             placeholder="Ask about specific career paths, skills, or trends...">
                         <button class="btn-brand">Ask Expert <i data-lucide="send"></i></button>
                     </div>
-                    <div class="d-flex justify-content-between px-3 mt-3">
+                    <div class="d-flex justify-content-between px-3 mt-2">
                         <span class="small text-muted">Response time: ~1hrs</span>
                         <span class="small text-muted">0/500 characters</span>
                     </div>
@@ -1117,6 +1115,9 @@
             </div>
         </div>
     </section>
+    <!-- our product -->
+     @include('frontend.partials.our_products')
+@endsection
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- University section -->
     <script>
@@ -1234,13 +1235,12 @@
             localStorage.setItem('selectedCollege', name);
         }
     </script>
-@endsection
 @push('footer')
     <!-- extra footer -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-            fetch("{{ route('ajax.colleges') }}")
+            fetch("{{ route('ajax.colleges') }}?&featured=true")
                 .then(res => res.text())
                 .then(html => {
 

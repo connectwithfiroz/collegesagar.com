@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CollegeController;
 use App\Http\Controllers\Admin\AdminprofileController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SpecializationController;
+use App\Http\Controllers\Admin\CollegeMetaController;
 
 
 Route::get('/login', [AdminHomeController::class, 'index'])->name('admin-login');
@@ -32,6 +33,8 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::name('admin.')->group(function () {
         Route::resource('colleges', CollegeController::class);
+        Route::get('colleges/{id}/meta', [CollegeMetaController::class, 'edit'])->name('colleges.edit.meta');
+        Route::post('colleges/{id}/meta', [CollegeMetaController::class, 'store'])->name('colleges.meta.store');
         Route::get('/college-data', [CollegeController::class, 'collegeData'])->name('colleges.data');
 
         Route::get('admin/colleges/{college}/courses', [CollegeController::class, 'courses'])

@@ -41,6 +41,10 @@ class HomeController extends Controller
     public function ajaxColleges(Request $request)
     {
         $query = College::with(['locations', 'collegeCourses.course', 'collegeCourses.specialization']);
+        //if featured=value is passed, then show only featured colleges
+        if ($request->featured) {
+            $query->where('is_featured', true);
+        }
 
         // search
         if ($request->search) {

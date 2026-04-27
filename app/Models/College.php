@@ -80,4 +80,15 @@ class College extends Model
             $college->slug = \Str::slug($college->name);
         });
     }
+
+    public function meta()
+    {
+        return $this->hasMany(CollegeMeta::class);
+    }
+
+    // Helper to get meta easily
+    public function getMeta($key, $default = null)
+    {
+        return $this->meta()->where('meta_key', $key)->first()->meta_value ?? $default;
+    }
 }
