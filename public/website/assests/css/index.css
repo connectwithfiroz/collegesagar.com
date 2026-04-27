@@ -1,0 +1,109 @@
+:root {
+    --accent-gold: var(--bs-primary);
+    /* Deep Golden Rod - Clearly visible on light bg */
+    --soft-gold: #FAF3E0;
+    /* Creamy Light Background */
+    --text-slate: #2F3640;
+    /* Professional Slate Grey */
+    --white: #FFFFFF;
+}
+/* Unique Gold Button */
+.btn-premium {
+    background-color: var(--accent-gold);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 0;
+    /* Sharp edges look more professional/academic */
+    padding: 10px 28px;
+    border: 1px solid var(--accent-gold);
+    transition: 0.4s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.btn-premium:hover {
+    background-color: transparent;
+    color: var(--accent-gold);
+    box-shadow: 5px 5px 0px var(--accent-gold);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+
+
+/* Search section css */
+.css-typist::after {
+    content: "Perfect Campus";
+    color: var(--accent-gold);
+    animation: rotateText 10s infinite;
+    border-right: 3px solid var(--accent-gold);
+    padding-right: 8px;
+}
+
+@keyframes rotateText {
+
+    0%,
+    20% {
+        content: "Perfect Campus";
+        width: 0;
+    }
+
+    25%,
+    45% {
+        content: "Dream College";
+    }
+
+    50%,
+    70% {
+        content: "Best Career";
+    }
+
+    75%,
+    95% {
+        content: "Top University";
+    }
+}
+
+/* 2. Entrance Animation for Search Bar */
+.search-bar-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 1s ease-out 0.5s forwards;
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. Button Premium Style (Square Fix) */
+.btn-premium {
+    background-color: var(--accent-gold);
+    color: white;
+    border: none;
+    transition: 0.3s;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-premium:hover {
+    background-color: var(--text-slate);
+    color: var(--accent-gold);
+    box-shadow: 4px 4px 0px var(--accent-gold);
+}
+
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 1s ease-in 1.2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

@@ -31,7 +31,8 @@ class SpecializationController extends Controller
     {
         $data = $request->validate([
             'course_id' => 'required|exists:courses,id',
-            'name' => 'required'
+            'name' => 'required',
+            'description' => 'nullable|max:1000',
         ]);
 
         $data['slug'] = \Str::slug($data['name']);

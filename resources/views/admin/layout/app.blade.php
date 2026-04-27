@@ -131,5 +131,7 @@
 
     @endif
 </script>
+<!-- For notification end -->
+    <script src="{{ asset('starter/reusable.js') }}"></script>
    @yield('custom-script')
 </html>

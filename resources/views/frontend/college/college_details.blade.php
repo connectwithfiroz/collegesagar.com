@@ -42,6 +42,7 @@
                                 <th>Specialization</th>
                                 <th>Fees</th>
                                 <th>Duration</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,6 +52,9 @@
                                     <td>{{ $cc->specialization->name ?? '-' }}</td>
                                     <td>₹{{ number_format($cc->fees) }}</td>
                                     <td>{{ $cc->duration }} {{ $cc->duration_type }}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" href="{{ route('apply.now_form', ['college_id' => $college->id, 'course_id' => $cc->course_id, 'specialization_id' => $cc->specialization_id ?? null, 'college' => $college->name]) }}">Apply</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -87,7 +91,7 @@
             <!-- APPLY BUTTON -->
             <div class="card">
                 <div class="card-body text-center">
-                    <button class="btn btn-success w-100">Apply Now</button>
+                    <a class="btn btn-success w-100" href="{{ route('apply.now_form', ['college_id' => $college->id, 'college' => $college->name]) }}">Apply Now</a>
                 </div>
             </div>
 

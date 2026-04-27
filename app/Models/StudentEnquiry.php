@@ -16,6 +16,23 @@ class StudentEnquiry extends Model
         'phone',
         'message',
         'source_page',
-        'ip_address'
+        'ip_address',
+        'college_id',
+        'course_id',
+        'specialization_id'
     ];
+    public function college()
+    {
+        return $this->belongsTo(College::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
 }

@@ -61,12 +61,24 @@ class AdminHomeController extends Controller
 
     public function studentEnquiriesData(Request $request)
     {
-        $data = StudentEnquiry::query();
+        $data = StudentEnquiry::with(['college', 'course', 'specialization']);
 
         return DataTables::of($data)
 
             ->addColumn('created', function ($row) {
                 return $row->created_at->format('d M Y h:i A');
+            })
+
+            ->addColumn('college_name', function ($row) {
+                return $row->college->name ?? '-';
+            })
+
+            ->addColumn('course_name', function ($row) {
+                return $row->course->name ?? '-';
+            })
+
+            ->addColumn('specialization_name', function ($row) {
+                return $row->specialization->name ?? '-';
             })
 
             ->editColumn('target_college', function ($row) {
