@@ -24,6 +24,7 @@ Route::get('/colleges', [HomeController::class, 'colleges'])->name('colleges');
 
 Route::get('/admission', [HomeController::class, 'admission'])->name('admission');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact/send', [HomeController::class, 'sendMail'])->name('contact.send');
 Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy_policy');
 Route::get('/scholarship', [HomeController::class, 'scholarship'])->name('scholarship');
 Route::get('/student-support', [HomeController::class, 'studentSupport'])->name('student_support');

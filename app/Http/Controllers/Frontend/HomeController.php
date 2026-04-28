@@ -14,6 +14,8 @@ use App\Mail\ContactMail;
 use App\Models\StudentEnquiry;
 use App\Models\Specialization;
 use App\Models\Location;
+use App\Models\Contact;
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     public function bestColleges($slug)
@@ -285,30 +287,7 @@ class HomeController extends Controller
     }
 
     // return redirect('/website/index.html');
-    public function sendMail(Request $request)
-    {
-        // Validate the form input
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'number' => 'required|numeric|digits_between:10,15',
-            'message' => 'required|string|min:10|max:1000',
-        ]);
-
-        // Get form data
-        $formData = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'number' => $request->number,
-            'message' => $request->message,
-        ];
-
-        // Send email
-        Mail::to('contacttofiroz@gmail.com')->send(new ContactMail($formData));
-
-        // Redirect with success message
-        return back()->with('success', 'Your message has been sent successfully!');
-    }
+    
 
     // TEST START
     public function admission()
@@ -319,6 +298,56 @@ class HomeController extends Controller
     public function contact()
     {
         return view('frontend.contact');
+    }
+    public function sendMail(Request $request)
+    {
+        // Validate the form input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'number' => 'required|numeric|digits_between:10,15',
+            'message' => 'required|string|min:10|max:1000',
+        ]);
+
+        // Rate limit by IP (1 hour)
+        $lastContact = Contact::where('ip_address', $request->ip())
+            ->orderBy('created_at', 'desc')
+            ->first();
+
+        if ($lastContact && $lastContact->created_at->diffInMinutes(Carbon::now()) < 60) {
+            return back()->with('success', 'Please wait at least 1 hour before sending a new contact message.');
+        }
+
+        // Save to DB
+        $contact = new Contact;
+        $contact->name = $request->name;
+        $contact->phone = $request->number;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+        $contact->address = $request->address ?? '';
+        $contact->ip_address = $request->ip();
+        $contact->user_agent = $request->header('User-Agent');
+        $contact->save();
+
+        // Prepare email data
+        $formData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'number' => $request->number,
+            'message' => $request->message,
+        ];
+
+        // Try to send email, log on failure
+        try {
+            Mail::to(config('app.MAIL_TO_ADDRESS'))
+                ->cc(config('app.CC_MAIL_ADDRESS'))
+                ->send(new ContactMail($formData));
+        } catch (\Exception $e) {
+            \Log::error('Contact form email failed to send: ' . $e->getMessage());
+        }
+
+        // Redirect with success message
+        return back()->with('success', 'Your message has been sent successfully!');
     }
 
     public function privacyPolicy()
